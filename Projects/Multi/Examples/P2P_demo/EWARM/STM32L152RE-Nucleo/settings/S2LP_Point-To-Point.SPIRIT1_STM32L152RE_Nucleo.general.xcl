@@ -1,0 +1,15 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\bin\armstlink2.dll" 
+
+"C:\Kuber\Radio_INDAR_Sir_Edit\X-CUBE-SUBG1_V3_S2LP_and_SPIRIT_Radio\Projects\Multi\Examples\P2P_demo\EWARM\STM32L152RE-Nucleo\SPIRIT1_STM32L152RE_Nucleo\Exe\S2LP_Point-To-Point.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\bin\armbat.dll" 
+
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\config\debugger\ST\STM32L1xx.dmac" 
+
+--flash_loader "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\config\flashloader\ST\FlashSTM32L15xxE.board" 
+
+
+
+

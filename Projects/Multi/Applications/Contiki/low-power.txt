@@ -1,0 +1,84 @@
+-------------------------------------------------------------------------------
+-                    (C) COPYRIGHT 2018 STMicroelectronics                    -
+- File:    low-power.txt                                                      -
+- Author:  ST Central Labs                                                    -
+- Date:    10-December-2018                                                   -
+- Version: V1.0.0                                                             -
+
+-----------
+Low Power features
+-----------
+Low Power features are implemented for NUCLEO-L152RE and S2-LP radio.
+In order to use them, the MCU_LOW_POWER and RADIO_LOW_POWER macros must be set to 1 in the project settings.
+These are enabled by default in UDP Sender and UDP Receiver applications when built for the above mentioned
+platform (L1 MCU and S2-LP radio), and are disabled in the other applications/configurations.
+
+All the more specific settings can be configured in low-power.h files that can be found in the Inc folder of each
+application.
+All the relevant API can be found in low-power.c files that can be found in the Src folder of each application.
+
+-- RADIO --
+The default Low Power strategy for the S2-LP Radio is the SNIFF mode, that automatically probes the radio channel
+for activity and, if none is found, sends back the radio to sleep mode very quickly (radio parameters settings available in
+Middlewares/ST/Contiki_STM32_Library/radio-driver.h file).
+The SNIFF mode is regulated by the RADIO_USES_SNIFF_MODE=1 macro. 
+SNIFF mode requires a longer radio preamble compared to the normal mode, and this is regulated by the
+RADIO_USES_LONG_PREAMBLE=1 macro.
+Since radio settings must be coherent, the RADIO_USES_LONG_PREAMBLE macro is enabled by default also for
+Border Router and Serial Sniffer projects (that don't use Low Power features).
+
+A preliminary support of ContikiMAC is available as well (RADIO_USES_CONTIKIMAC=1) but for better overall results
+the use of SNIFF mode is recommended.
+
+-- MCU --
+Reducing the consumption for the MCU is done in two ways:
+ + By reducing the overall System Frequency, from the DEFAULT_CLOCK_FREQUENCY=32000 (32 MHz) to a lower value that can
+   be configured in the low-power.h file. Default value is USER_CLOCK_FREQUENCY=4194 (4 MHz).
+ + By letting the MCU go in sleep mode when in Idle loop. Two API are available to implement the sleep mode:
+     LP_enter_sleep_mode() and LP_exit_sleep_mode(). The former is called from main.c idle loop, the latter is called
+	 from the same file and from the stm32l1xx_it.c file, to properly exit the sleep mode when awaken by the Radio.
+   ++ In sleep mode the MCU clock frequency is reduced to the lowest possible value of SLEEP_CLOCK_FREQUENCY=65 (65 KHz). For this
+      reason when exiting the sleep mode the system clock must be adjusted by a fixed offset. This value is dependent on
+	  the used USER_CLOCK_FREQUENCY and on the selected toolchain (because the __WFI() implementation is compiler dependent).
+	  A set of predefined values can be found in the COMPENSATE_TICKS macro in low-power.h file. The user must check the
+	  timers behavior in his final application and, in case, adjust this value. If a timer expires too quickly, the
+	  COMPENSATE_TICKS value must be lowered, and vice versa.
+
+-- Application Layer Duty Cycle --
+The LP_enter_stop_mode(...)/LP_exit_stop_mode(...) APIs can be used to send the the system can be in a very low power state by putting
+the MCU in STOP mode and the radio in Stand-by mode, for a given amount of time. This can be done in a periodic way or upon reception
+of a specific command.
+Of course during this period the node will not be reachable.
+The user can also select whatever at the end of the STOP mode only the MCU or also the Radio have to be "switched on".
+
+In the UDP Sender application (for L1 MCU and S2-LP radio) the LP_enter_stop_mode(...)/LP_exit_stop_mode(...) functions are used to
+implement two kind of Application Layer Duty Cycle.
+The node starts in "normal mode", with Low Power features but no Duty Cycle, by pressing the User Button the user can switch 
+among the three possible modes (the current operating mode is also reflected in the sent packet that starts with [N], [S], [P]
+reflecting the three possibilities):
+ + DUTY_CYCLE_NONE: this is the normal behavior, MCU and RADIO are always on, according
+     to the low power settings (i.e. MCU can sleep in idle and radio might use SNIFF mode).
+     UDP Packets will be sent every APP_DUTY_CYCLE_SLOT seconds.
+ + DUTY_CYCLE_SIMPLE: simplest case of Application Layer Duty Cycle, that can address a
+     PERIODIC use case (i.e. send Temperature value every tot seconds); we have a STOP
+     slot of APP_DUTY_CYCLE_OFF seconds in which both the MCU and the radio are OFF,
+     the node is not reachable and can't do any computation. Then both MCU and RADIO will
+     be switched ON for TWO time slot of APP_DUTY_CYCLE_SLOT seconds, in the middle
+     of this time, a UDP packet will always be sent. As a result, UDP packets will be
+     sent every (APP_DUTY_CYCLE_OFF + 2*APP_DUTY_CYCLE_SLOT) seconds.
+ + DUTY_CYCLE_PROBING:  (available if the radio uses SNIFF mode, not if it uses ContikiMAC)
+     more complex Application Layer Duty Cycle, that can address a
+     EVENT driven use case (i.e. probe if there is smoke in the room and send the alarm);
+     we have a STOP slot of APP_DUTY_CYCLE_OFF seconds in which both the MCU and the
+     radio are OFF, the node is not reachable and can't do any computation. Then only MCU
+     will be switched on while radio will stay off, so the node can do computation but it is
+     not reachable. A probe function can be called (here we provide a simple demo only).
+     If the application needs to send data, then it will switch radio ON and do this in
+     next slot. Probing will be called every APP_DUTY_CYCLE_OFF seconds and will keep MCU on
+     for APP_DUTY_CYCLE_SLOT seconds. The idea is that there is no fixed periodic
+     UDP sending interval... actually in this simple demo the probe() function will return
+     positive result every two calls, so UDP packets will be sent every
+     (2*APP_DUTY_CYCLE_OFF + 3*APP_DUTY_CYCLE_SLOT) seconds.
+ 
+_______________________________________________________________________________
+- (C) COPYRIGHT 2018 STMicroelectronics                   ****END OF FILE**** -
