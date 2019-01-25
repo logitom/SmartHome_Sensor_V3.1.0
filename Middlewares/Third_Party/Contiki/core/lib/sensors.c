@@ -38,6 +38,9 @@
 
 #include "lib/sensors.h"
 
+#include "stm32l1xx_hal.h"
+#include <stm32l1xx_nucleo.h>
+
 const extern struct sensors_sensor *sensors[];
 extern unsigned char sensors_flags[];
 
@@ -103,7 +106,8 @@ PROCESS_THREAD(sensors_process, ev, data)
 {
   static int i;
   static int events;
-
+  static int sensor_pin;
+  
   PROCESS_BEGIN();
 
   sensors_event = process_alloc_event();
@@ -122,7 +126,23 @@ PROCESS_THREAD(sensors_process, ev, data)
       events = 0;
       for(i = 0; i < num_sensors; ++i) {
 	if(sensors_flags[i] & FLAG_CHANGED) {
-	  if(process_post(PROCESS_BROADCAST, sensors_event, (void *)sensors[i]) == PROCESS_ERR_OK) {
+    
+    
+    #if 1     
+     //read sensor pin
+     if(HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2)==GPIO_PIN_SET)
+     {
+         sensor_pin=1; //door open   
+         printf("door open\r\n");       
+     }
+     else
+     {
+         sensor_pin=0; //door close
+         printf("door close\r\n"); 
+     }       
+#endif  
+    
+	  if(process_post(PROCESS_BROADCAST, sensors_event, (void *)sensor_pin) == PROCESS_ERR_OK) {
 	    PROCESS_WAIT_EVENT_UNTIL(ev == sensors_event);
 	  }
 	  sensors_flags[i] &= ~FLAG_CHANGED;

@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'Project' 
- * Target:  'S2LP_STM32L152RE_Nucleo' 
+ * Target:  'SPIRIT1_STM32L152RE_Nucleo' 
  */
 
 #ifndef RTE_COMPONENTS_H

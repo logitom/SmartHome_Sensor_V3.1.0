@@ -195,6 +195,7 @@ void MX_GPIO_Init(void)
 	/* GPIO Ports Clock Enable */
 	__GPIOA_CLK_ENABLE();
 	__GPIOC_CLK_ENABLE();
+  __GPIOD_CLK_ENABLE();
 	/* W.B.C: D, E, F, G and H GPIOs are set as ANALOG in NOPULL with clock disabled since
 	   they are not used by the application. (NUCLEO + S2LP)*/
 	//MGR: check if it is ok for SPIRIT1, also check that this code is modified by us...
@@ -244,6 +245,24 @@ void MX_GPIO_Init(void)
 	__HAL_RCC_I2C2_CLK_DISABLE();
 
 	__HAL_RCC_COMP_CLK_DISABLE();
+  
+  
+  GPIO_InitTypeDef GPIO_InitStruct;
+     /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  
+  
+    /*Configure GPIO pin : PD2 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  GPIO_InitStruct.Mode =GPIO_MODE_IT_RISING_FALLING;;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  
+  
+   /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI2_IRQn); 
 }
 
 

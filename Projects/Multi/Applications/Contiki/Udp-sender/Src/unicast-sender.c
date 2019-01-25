@@ -329,11 +329,12 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   simple_udp_register(&unicast_connection, UDP_PORT,
                       NULL, UDP_PORT, receiver);
 
-  ctimer_set(&send_timer, APP_DUTY_CYCLE_SLOT * CLOCK_SECOND, periodic_sender, NULL);
+  char buf[3];
+ // ctimer_set(&send_timer, APP_DUTY_CYCLE_SLOT * CLOCK_SECOND, periodic_sender, NULL);
 
   while(1) {
     PROCESS_WAIT_EVENT();
-    if(ev == sensors_event && data == &button_sensor ){
+    if(ev == sensors_event){
 #if MCU_LOW_POWER
     	if (from_stop
 #  if LP_PERIPHERAL_IN_SLEEP
@@ -351,6 +352,32 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
     		printf("Duty cycle is now %s.\r\n", duty_cycle_name[duty_cycle]);
     	}
 #endif /*MCU_LOW_POWER*/
+       
+      
+      if (addr == NULL)  { //Actually can happen only when servreg_hack service is on
+
+          addr = servreg_hack_lookup(SERVICE_ID);
+      }
+      
+       // send sensor report data here
+      BSP_LED_Toggle(LED_GREEN);
+      buf[0]=0x01; // report type: 0,periodic 1,alarm
+      buf[1]=0x04; // device ID:0x04 door detector
+        
+      buf[2]=(char)data; 
+      //simple_udp_sendto(&unicast_connection, buf, strlen(buf) + 1, addr);
+      if(buf[2]==1)
+      {
+        simple_udp_sendto(&unicast_connection, buf, strlen(buf),addr);
+        printf("send a door alarm\r\n");
+        //BSP_LED_On(LED3_ALARM);
+        //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_4); 
+      }
+      
+      printf("Door state: %d\n", buf[2]);       
+      
+      
+      
     }
   }
   PROCESS_END();

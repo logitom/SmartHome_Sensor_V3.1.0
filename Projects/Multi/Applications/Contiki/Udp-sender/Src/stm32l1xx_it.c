@@ -206,9 +206,12 @@ void EXTI2_IRQHandler(void)
   /* EXTI line interrupt detected */
   if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_2) != RESET) 
   { 
+     //door sensor  
+     HAL_GPIO_EXTI_Callback(GPIO_PIN_2);
     __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_2);
   }
-  while(1);
+  
+  //while(1);
 }
 /*----------------------------------------------------------------------------*/
 void EXTI3_IRQHandler(void)
@@ -368,7 +371,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		LP_interrupt_from_radio = 1;
 	}
 #endif /*MCU_LOW_POWER*/
-	if (GPIO_Pin == USER_BUTTON_PIN)
+	if (GPIO_Pin == GPIO_PIN_2)
 	{
 	  sensors_changed(&button_sensor);
 	}
