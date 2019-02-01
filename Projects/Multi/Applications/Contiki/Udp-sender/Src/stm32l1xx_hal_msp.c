@@ -270,7 +270,7 @@ void USARTConfig(void)
     UartHandle.pRxBuffPtr = (uint8_t*)UART_RxBuffer;
     UartHandle.RxXferSize = UART_RxBufferSize;
     UartHandle.ErrorCode = HAL_UART_ERROR_NONE;
-    //HAL_UART_Receive_IT(&UartHandle, (uint8_t*)UART_RxBuffer, UART_RxBufferSize);//W.B.C
+    HAL_UART_Receive_IT(&UartHandle, (uint8_t*)UART_RxBuffer, UART_RxBufferSize);//W.B.C
 }
 
 

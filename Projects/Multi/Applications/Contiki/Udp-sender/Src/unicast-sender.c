@@ -65,6 +65,8 @@
 //#  define LWM2M_SERVER_ADDRESS_v6 "aaaa::a00:f7ff:104e:efb1"
 #endif
 
+#define LOOP_INTERVAL		(30 * CLOCK_SECOND)
+
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
 /*---------------------------------------------------------------------------*/
@@ -167,8 +169,11 @@ receiver(struct simple_udp_connection *c,
          const uint8_t *data,
          uint16_t datalen)
 {
-  printf("Data received on port %d from port %d with length %d\n",
-         receiver_port, sender_port, datalen);
+  printf("Data received %s: from:",
+         data);
+  
+  uip_debug_ipaddr_print(sender_addr);
+  printf("\r\n");
 }
 #if MCU_LOW_POWER
 /*---------------------------------------------------------------------------*/
@@ -308,7 +313,12 @@ set_global_address(void)
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(unicast_sender_process, ev, data)
 {
-/*To skip autodetection of the receiver using the servreg service,
+
+  static struct etimer periodic_timer;  
+  
+   etimer_set(&periodic_timer, LOOP_INTERVAL);
+
+  /*To skip autodetection of the receiver using the servreg service,
  * set SERVREG_HACK_ENABLED to 0 and uncomment one of the specific lines
  * (hardcoded server address or multicast message) and set the addr pointer.
  */
@@ -329,12 +339,15 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   simple_udp_register(&unicast_connection, UDP_PORT,
                       NULL, UDP_PORT, receiver);
 
-  char buf[3];
+  char buf[50];
+  memset(buf,0,3);
+ // memset(&buf[3],6,47);
  // ctimer_set(&send_timer, APP_DUTY_CYCLE_SLOT * CLOCK_SECOND, periodic_sender, NULL);
 
   while(1) {
     PROCESS_WAIT_EVENT();
-    if(ev == sensors_event){
+    //if(ev == sensors_event || (ev==PROCESS_EVENT_TIMER && data==&periodic_timer)){
+    if(ev==PROCESS_EVENT_TIMER && data==&periodic_timer){  
 #if MCU_LOW_POWER
     	if (from_stop
 #  if LP_PERIPHERAL_IN_SLEEP
@@ -352,31 +365,35 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
     		printf("Duty cycle is now %s.\r\n", duty_cycle_name[duty_cycle]);
     	}
 #endif /*MCU_LOW_POWER*/
-       
-      
+       etimer_reset(&periodic_timer); 
+       etimer_restart(&periodic_timer); 
       if (addr == NULL)  { //Actually can happen only when servreg_hack service is on
 
           addr = servreg_hack_lookup(SERVICE_ID);
+          printf("serer address is null\r\n");
       }
       
        // send sensor report data here
       BSP_LED_Toggle(LED_GREEN);
       buf[0]=0x01; // report type: 0,periodic 1,alarm
-      buf[1]=0x04; // device ID:0x04 door detector
+      buf[1]=0x09; // device ID:0x04 door detector
         
-      buf[2]=(char)data; 
+     // buf[2]=(char)data; 
+     buf[2]=0x01;        
       //simple_udp_sendto(&unicast_connection, buf, strlen(buf) + 1, addr);
       if(buf[2]==1)
       {
-        simple_udp_sendto(&unicast_connection, buf, strlen(buf),addr);
+        sprintf(&buf[3], "Message %lu",  message_number);
+        simple_udp_sendto(&unicast_connection, buf, strlen(buf)+1,addr);// strlen(buf),addr);
         printf("send a door alarm\r\n");
+         message_number++;
         //BSP_LED_On(LED3_ALARM);
         //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_4); 
       }
       
       printf("Door state: %d\n", buf[2]);       
       
-      
+    
       
     }
   }

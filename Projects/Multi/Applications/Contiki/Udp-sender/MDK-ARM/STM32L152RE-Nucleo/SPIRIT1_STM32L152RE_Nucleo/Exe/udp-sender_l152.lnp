@@ -30,6 +30,7 @@
 "spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc.o"
 "spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_tim.o"
 "spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_adc.o"
+"spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_i2c.o"
 "spirit1_stm32l152re_nucleo\exe\udp-socket.o"
 "spirit1_stm32l152re_nucleo\exe\psock.o"
 "spirit1_stm32l152re_nucleo\exe\tcpip.o"

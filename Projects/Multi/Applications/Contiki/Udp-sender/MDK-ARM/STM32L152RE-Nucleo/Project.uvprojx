@@ -545,6 +545,11 @@
               <FileType>1</FileType>
               <FilePath>../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32l1xx_hal_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\..\Drivers\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_i2c.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2937,6 +2942,11 @@
               <FileName>stm32l1xx_hal_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l1xx_hal_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\..\..\Drivers\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_i2c.c</FilePath>
             </File>
           </Files>
         </Group>
