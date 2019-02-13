@@ -156,6 +156,8 @@ static uip_ipaddr_t server_ipaddr;
 static uip_ipaddr_t *addr = NULL;
 static struct ctimer send_timer;
 static unsigned long int message_number = 0;
+
+extern TIM_HandleTypeDef htim3;
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
 AUTOSTART_PROCESSES(&unicast_sender_process);
@@ -343,7 +345,10 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   memset(buf,0,3);
  // memset(&buf[3],6,47);
  // ctimer_set(&send_timer, APP_DUTY_CYCLE_SLOT * CLOCK_SECOND, periodic_sender, NULL);
-
+//buzzer start
+ //Buzzer_On();
+ //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1); 
+ //BSP_LED_On(LED_ALARM);
   while(1) {
     PROCESS_WAIT_EVENT();
     //if(ev == sensors_event || (ev==PROCESS_EVENT_TIMER && data==&periodic_timer)){

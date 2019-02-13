@@ -61,5 +61,6 @@ void RTC_Config(void);
 void RTC_TimeStampConfig(void);
 
 void USARTConfig(void);
+void AlarmPWM(TIM_HandleTypeDef* htim);
 
 #endif //_CUBE_HAL_H_

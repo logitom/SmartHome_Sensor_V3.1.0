@@ -83,9 +83,9 @@
 /** @defgroup STM32L1XX_NUCLEO_Private_Variables Private Variables
   * @{
   */ 
-GPIO_TypeDef* LED_PORT[LEDn] = {LED2_GPIO_PORT};
+GPIO_TypeDef* LED_PORT[LEDn] = {LED2_GPIO_PORT,ALARM_GPIO_PORT};
 
-const uint16_t LED_PIN[LEDn] = {LED2_PIN};
+const uint16_t LED_PIN[LEDn] = {LED2_PIN,ALARM_PIN};
 
 GPIO_TypeDef* BUTTON_PORT[BUTTONn]  = {USER_BUTTON_GPIO_PORT}; 
 const uint16_t BUTTON_PIN[BUTTONn]  = {USER_BUTTON_PIN}; 

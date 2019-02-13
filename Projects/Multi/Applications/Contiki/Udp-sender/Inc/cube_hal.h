@@ -61,5 +61,7 @@ void RTC_Config(void);
 void RTC_TimeStampConfig(void);
 
 void USARTConfig(void);
-
+void BUZZERConfig(void);
+void Buzzer_On(void);
+void Buzzer_Off(void);
 #endif //_CUBE_HAL_H_

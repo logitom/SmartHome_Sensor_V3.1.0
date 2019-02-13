@@ -57,6 +57,8 @@
 volatile uint8_t UART_RxBuffer[UART_RxBufferSize];
 volatile uint32_t Usart_BaudRate = 115200;//previously 115200
 
+//TIM_OC_InitTypeDef sConfigOC;
+TIM_HandleTypeDef htim3;
 UART_HandleTypeDef UartHandle;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -345,7 +347,114 @@ void HAL_RTC_MspInit(RTC_HandleTypeDef *hrtc)
 
 }
 
+void AlarmPWM(TIM_HandleTypeDef* htim)
+{
 
+  GPIO_InitTypeDef GPIO_InitStruct;
+  if(htim->Instance==TIM2)
+  {
+      /* USER CODE BEGIN TIM3_MspPostInit 0 */
+
+      /* USER CODE END TIM3_MspPostInit 0 */
+  
+      /**TIM3 GPIO Configuration    
+      PA0     ------> TIM2_CH1 
+      */
+      GPIO_InitStruct.Pin = GPIO_PIN_0;
+      GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+      GPIO_InitStruct.Pull = GPIO_NOPULL;
+      GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+      GPIO_InitStruct.Alternate = GPIO_AF1_TIM2;
+      HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);   
+     
+  }else if(htim->Instance==TIM5)
+  {
+      /* USER CODE BEGIN TIM3_MspPostInit 0 */
+
+      /* USER CODE END TIM3_MspPostInit 0 */
+  
+      /**TIM3 GPIO Configuration    
+      PC9     ------> TIM3_CH4 
+      */
+     GPIO_InitStruct.Pin = GPIO_PIN_0;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF2_TIM5;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  
+  }
+
+}
+
+
+/**
+ * @brief  Configure the BUZZER
+  * @param  None
+  * @retval None
+  */
+void BUZZERConfig(void)
+{
+
+  TIM_ClockConfigTypeDef sClockSourceConfig;
+  TIM_MasterConfigTypeDef sMasterConfig;
+  TIM_OC_InitTypeDef sConfigOC;
+
+  htim3.Instance = TIM5;
+  htim3.Init.Prescaler = 32;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 1000;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 500;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  AlarmPWM(&htim3);
+  HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);  
+ }
+
+
+
+
+ 
+ 
+void Buzzer_On(void)
+{
+    HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);    
+}
+
+void Buzzer_Off(void)
+{
+    HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
+}  
 /**
   * @}
   */

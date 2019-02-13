@@ -205,7 +205,7 @@ void MX_GPIO_Init(void)
 	__HAL_RCC_GPIOF_CLK_ENABLE();
 	__HAL_RCC_GPIOG_CLK_ENABLE();
 	__HAL_RCC_GPIOH_CLK_ENABLE();
-
+#if 0
 	GPIO_InitStructure.Mode=GPIO_MODE_ANALOG;
 	GPIO_InitStructure.Pull=GPIO_NOPULL;
 	GPIO_InitStructure.Pin=GPIO_PIN_All;
@@ -245,21 +245,27 @@ void MX_GPIO_Init(void)
 	__HAL_RCC_I2C2_CLK_DISABLE();
 
 	__HAL_RCC_COMP_CLK_DISABLE();
-  
+#endif  
   
   GPIO_InitTypeDef GPIO_InitStruct;
      /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  
-  
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_TIM2_CLK_ENABLE();
+  __HAL_RCC_TIM3_CLK_ENABLE();
+  __HAL_RCC_TIM5_CLK_ENABLE();
+  __TIM2_CLK_ENABLE();
+  __TIM3_CLK_ENABLE();
+ 
+ 
     /*Configure GPIO pin : PD2 */
   GPIO_InitStruct.Pin = GPIO_PIN_2;
   GPIO_InitStruct.Mode =GPIO_MODE_IT_RISING_FALLING;;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  
-  
+    
    /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI2_IRQn); 

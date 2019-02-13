@@ -84,6 +84,10 @@ int main()
   
   MX_GPIO_Init();
   USARTConfig();
+  
+  BUZZERConfig();
+  
+  
 #if MCU_LOW_POWER
   if (USER_CLOCK_FREQUENCY != DEFAULT_CLOCK_FREQUENCY) {
 	  HAL_RCC_DeInit();
@@ -96,7 +100,8 @@ int main()
   
   /* Initialize LEDs */
   BSP_LED_Init(LED2);
-  
+  BSP_LED_Init(LED_ALARM);
+ 
   RadioShieldLedInit(RADIO_SHIELD_LED);
   
   BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
@@ -115,6 +120,8 @@ int main()
 #endif /*MCU_LOW_POWER*/
     do {
       r = process_run();
+      // add watch dog timer here
+      
     } while(r > 0);
 #if MCU_LOW_POWER
 #  if RADIO_USES_CONTIKIMAC
