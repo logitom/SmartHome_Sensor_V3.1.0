@@ -83,6 +83,18 @@ extern "C" {
 
 #endif
 
+struct sensor_pkt
+{
+    uint8_t cmd;
+    uint8_t device_type;
+    uint8_t alarm_status;
+    uint8_t index;
+    uint8_t status;
+    uint8_t sensor_type;
+    uint8_t sensor_data;
+    uint8_t battery;
+};
+
 
 #ifdef __cplusplus
 }

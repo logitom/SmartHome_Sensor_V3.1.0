@@ -30,6 +30,7 @@
  *
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "contiki.h"
 #include "lib/random.h"
@@ -128,6 +129,26 @@ static const char *duty_cycle_name[DUTY_CYCLE_NB] =
 		, "PROBING"
 #endif /*!RADIO_USES_CONTIKIMAC*/
 };
+#if 0
+struct sensor_data
+{
+    uint8_t index;
+    uint8_t sensor_status;
+    uint8_t sensor_type;  
+}  
+
+struct sensor
+{
+    uint8_t cmd,
+    uint8_t device_type,
+    bool    alarm_status,
+    sensor_data   *sensor //this is for testing. should be void *    
+}
+#endif
+
+
+
+
 
 /*We can have two phases:
  * - DUTY_CYCLE_PHASE_STOP: if duty cycle is NOT of type DUTY_CYCLE_NONE the system
@@ -316,9 +337,10 @@ set_global_address(void)
 PROCESS_THREAD(unicast_sender_process, ev, data)
 {
 
+  static struct sensor_pkt door;
   static struct etimer periodic_timer;  
-  
-   etimer_set(&periodic_timer, LOOP_INTERVAL);
+    
+  etimer_set(&periodic_timer, rand()%LOOP_INTERVAL);
 
   /*To skip autodetection of the receiver using the servreg service,
  * set SERVREG_HACK_ENABLED to 0 and uncomment one of the specific lines
@@ -370,8 +392,8 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
     		printf("Duty cycle is now %s.\r\n", duty_cycle_name[duty_cycle]);
     	}
 #endif /*MCU_LOW_POWER*/
-       etimer_reset(&periodic_timer); 
-       etimer_restart(&periodic_timer); 
+       //etimer_reset(&periodic_timer); 
+      
       if (addr == NULL)  { //Actually can happen only when servreg_hack service is on
 
           addr = servreg_hack_lookup(SERVICE_ID);
@@ -380,25 +402,31 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       
        // send sensor report data here
       BSP_LED_Toggle(LED_GREEN);
-      buf[0]=0x01; // report type: 0,periodic 1,alarm
-      buf[1]=0x09; // device ID:0x04 door detector
-        
-     // buf[2]=(char)data; 
-     buf[2]=0x01;        
-      //simple_udp_sendto(&unicast_connection, buf, strlen(buf) + 1, addr);
-      if(buf[2]==1)
-      {
-        sprintf(&buf[3], "Message %lu",  message_number);
-        simple_udp_sendto(&unicast_connection, buf, strlen(buf)+1,addr);// strlen(buf),addr);
-        printf("send a door alarm\r\n");
-         message_number++;
+      
+      door.cmd=0x03;
+      door.device_type=0x03;
+      door.alarm_status=1; // 1: alarm was triggered
+      door.index=0;
+      door.status=3;
+      door.sensor_type=0x0a;
+      door.sensor_data=1;
+      door.battery=50;
+      // 0x01; // report type: 0,periodic 1,alarm
+      //buf[1]=0x09; // device ID:0x04 door detector
+     
+           
+      //sprintf(&buf[3], "Message %lu",  message_number);
+      simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door)+1,addr);// strlen(buf),addr);
+      printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
+         //message_number++;
         //BSP_LED_On(LED3_ALARM);
         //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_4); 
-      }
       
-      printf("Door state: %d\n", buf[2]);       
       
-    
+      printf("Door state: %d\n", door.sensor_data);       
+      etimer_reset_with_new_interval(&periodic_timer,rand()%LOOP_INTERVAL);
+      etimer_restart(&periodic_timer);  
+      
       
     }
   }
