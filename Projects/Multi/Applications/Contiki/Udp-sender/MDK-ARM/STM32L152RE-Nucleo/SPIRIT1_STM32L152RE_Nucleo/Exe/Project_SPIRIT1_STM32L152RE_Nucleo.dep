@@ -582,7 +582,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_tim_ex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_tim_ex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_tim_ex.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -634,7 +634,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_pwr.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_pwr.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_pwr.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -686,7 +686,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_adc_ex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_adc_ex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_adc_ex.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -738,7 +738,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc_ex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rtc_ex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rtc_ex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rtc_ex.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -790,7 +790,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi_ex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi_ex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi_ex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi_ex.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -842,215 +842,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
-F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_usart.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_usart.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_usart.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_usart.d)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
-I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
-F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_gpio.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_gpio.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_gpio.d)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
-I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
-F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi.d)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
-I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
-F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc_ex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc_ex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc_ex.d)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
-I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
-I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_dma.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_dma.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_dma.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1102,7 +894,215 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
+F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_usart.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_usart.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_usart.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_usart.d)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
+I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
+F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_gpio.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_gpio.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_gpio.d)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
+I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
+F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_spi.d)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
+I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
+F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc_ex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc_ex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc_ex.d)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
+I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_flash.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_flash.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_flash.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1154,7 +1154,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_uart.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_uart.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_uart.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1206,7 +1206,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_pwr_ex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_pwr_ex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_pwr_ex.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1258,7 +1258,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_cortex.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_cortex.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_cortex.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1310,7 +1310,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rtc.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rtc.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rtc.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1362,7 +1362,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1414,7 +1414,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_rcc.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1466,7 +1466,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_tim.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_tim.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_tim.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1518,7 +1518,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_adc.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_adc.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_adc.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1570,7 +1570,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (..\..\..\..\..\..\..\Drivers\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_i2c.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_i2c.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_i2c.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_i2c.d)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -1622,7 +1622,59 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
+F (..\..\..\..\..\..\..\Drivers\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_wwdg.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_wwdg.o --omf_browse spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_wwdg.crf --depend spirit1_stm32l152re_nucleo\exe\stm32l1xx_hal_wwdg.d)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
+I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l152xe.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cm3.h)(0x5BA85E58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmInstr.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Include/core_cmFunc.h)(0x5BA85E58)
+I (../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include/system_stm32l1xx.h)(0x5BA85E58)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5BA85E5A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_gpio_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dma.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cortex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_adc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_comp_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_crc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_cryp.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_dac_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_flash_ramfunc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sram.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_fsmc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_nor.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2s.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_iwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_lcd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rtc_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_sd.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/BSP/Components/S2LP/S2LP_Util/Src/S2LP_Util.c)(0x5BA85E56)()
 F (../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip/udp-socket.c)(0x5B0FA1BE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\udp-socket.o --omf_browse spirit1_stm32l152re_nucleo\exe\udp-socket.crf --depend spirit1_stm32l152re_nucleo\exe\udp-socket.d)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki-net.h)(0x5BA85E5A)
@@ -3443,7 +3495,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../../../../../../Drivers/BSP/STM32L1xx_Nucleo/stm32l1xx_nucleo.h)(0x5C639721)
 F (../../../../../../../Middlewares/Third_Party/Contiki/core/lib/random.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\random.o --omf_browse spirit1_stm32l152re_nucleo\exe\random.crf --depend spirit1_stm32l152re_nucleo\exe\random.d)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/lib/random.h)(0x5BA85E5A)
@@ -3507,7 +3559,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Src/radio_gpio.c)(0x5BA85E56)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\radio_gpio.o --omf_browse spirit1_stm32l152re_nucleo\exe\radio_gpio.crf --depend spirit1_stm32l152re_nucleo\exe\radio_gpio.d)
 I (../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc/radio_gpio.h)(0x5BA85E56)
 I (../../Inc/cube_hal.h)(0x5C638C68)
@@ -3561,7 +3613,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki.h)(0x5BA85E5A)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki-version.h)(0x5BA85E5A)
@@ -3648,7 +3700,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki.h)(0x5BA85E5A)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki-version.h)(0x5BA85E5A)
@@ -3754,7 +3806,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki.h)(0x5BA85E5A)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki-version.h)(0x5BA85E5A)
@@ -4495,7 +4547,7 @@ F (../../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/Src/S2LP_Csma.c
 F (../../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/Src/S2LP_Gpio.c)(0x5BA85E56)()
 F (../../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/Src/S2LP_Commands.c)(0x5BA85E56)()
 F (../../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/Src/S2LP_PktStack.c)(0x5BA85E56)()
-F (../../Src/main.c)(0x5C6397CC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\main.o --omf_browse spirit1_stm32l152re_nucleo\exe\main.crf --depend spirit1_stm32l152re_nucleo\exe\main.d)
+F (../../Src/main.c)(0x5C6A23D5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\main.o --omf_browse spirit1_stm32l152re_nucleo\exe\main.crf --depend spirit1_stm32l152re_nucleo\exe\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
@@ -4549,7 +4601,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../../../../../../Drivers/BSP/STM32L1xx_Nucleo/stm32l1xx_nucleo.h)(0x5C639721)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/platform-conf.h)(0x5C136BD0)
 I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x569DEA3A)
@@ -4585,7 +4637,7 @@ I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/MCU_I
 I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/SPIRIT_Types.h)(0x5BA85E56)
 I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/SPIRIT_Regs.h)(0x5BA85E56)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/contiki-st-radio-main.h)(0x5C00BF6C)
-F (../../Src/unicast-sender.c)(0x5C667125)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\unicast-sender.o --omf_browse spirit1_stm32l152re_nucleo\exe\unicast-sender.crf --depend spirit1_stm32l152re_nucleo\exe\unicast-sender.d)
+F (../../Src/unicast-sender.c)(0x5C6A3C10)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\unicast-sender.o --omf_browse spirit1_stm32l152re_nucleo\exe\unicast-sender.crf --depend spirit1_stm32l152re_nucleo\exe\unicast-sender.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
@@ -4699,7 +4751,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-driver.h)(0x5BFB62F0)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-const.h)(0x5C10D812)
@@ -4726,7 +4778,7 @@ I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/SPIRI
 I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/SPIRIT_Management.h)(0x5BA85E56)
 I (../../Inc/main.h)(0x5C6674F9)
 I (../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack/servreg-hack.h)(0x5B0FA1BE)
-F (../../Src/cube_hal_l1.c)(0x5C63C57E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\cube_hal_l1.o --omf_browse spirit1_stm32l152re_nucleo\exe\cube_hal_l1.crf --depend spirit1_stm32l152re_nucleo\exe\cube_hal_l1.d)
+F (../../Src/cube_hal_l1.c)(0x5C6A2864)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\cube_hal_l1.o --omf_browse spirit1_stm32l152re_nucleo\exe\cube_hal_l1.crf --depend spirit1_stm32l152re_nucleo\exe\cube_hal_l1.d)
 I (../../Inc/cube_hal.h)(0x5C638C68)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h)(0x5BA85E5A)
 I (../../Inc/stm32l1xx_hal_conf.h)(0x5BA85E5A)
@@ -4778,7 +4830,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki.h)(0x5BA85E5A)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki-version.h)(0x5BA85E5A)
@@ -4865,7 +4917,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/main.h)(0x5C6674F9)
 I (../../../../../../../Drivers/BSP/STM32L1xx_Nucleo/stm32l1xx_nucleo.h)(0x5C639721)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/platform-conf.h)(0x5C136BD0)
@@ -4982,7 +5034,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../../../../../../Drivers/BSP/STM32L1xx_Nucleo/stm32l1xx_nucleo.h)(0x5C639721)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-driver.h)(0x5BFB62F0)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-const.h)(0x5C10D812)
@@ -5636,7 +5688,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 F (../../../../../../../Middlewares/Third_Party/Contiki/core/dev/leds.c)(0x5BA85E5A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../../Inc -I ../../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I ../../../../../../../Drivers/CMSIS/Include -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc -I ../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I ../../../../../../../Drivers/BSP/STM32L1xx_Nucleo -I ../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc -I ../../../../../../../Middlewares/ST/Contiki_STM32_Library/dev -I ../../../../../../../Drivers/BSP/Components/ -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc -I ../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Util/Inc -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core -I ../../../../../../../Middlewares/Third_Party/Contiki/core/sys -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net -I ../../../../../../../Middlewares/Third_Party/Contiki/core/dev -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ip -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/ipv6 -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/llsec -I ../../../../../../../Middlewares/Third_Party/Contiki/core/net/rpl -I ../../../../../../../Middlewares/Third_Party/Contiki -I ../../../../../../../Middlewares/Third_Party/Contiki/core/lib -I ../../../../../../../Middlewares/Third_Party/Contiki/apps/servreg-hack-I D:\Project\STM\STM_V3.1.0_Sensor\Projects\Multi\Applications\Contiki\Udp-sender\MDK-ARM\STM32L152RE-Nucleo\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0\Device\Include-D__UVISION_VERSION="518" -D_RTE_ -DSTM32L152xE -DX_NUCLEO_IDS01A5 -DMCU_LOW_POWER="0" -DRADIO_LOW_POWER="0" -DPROJECT_CONF_H="1" -DSTM32L152xE -DUSE_USART2 -DUSE_STM32L1XX_NUCLEO -DUSE_HAL_DRIVER -DHSE_VALUE="32000000ul" -DUSE_STDPERIPH_DRIVER -DNO_EEPROM -DSPIRIT1_ST_SHIELD -DSPIRIT_MODULE -DUSE_SPIRIT1_DEFAULT -DWITH_UIP6 -DIAR_ARM_CM3 -DVECT_TAB_FLASH -DWITH_UIP -DWITH_ASCII -DCONTIKI="1" -DUIP_CONF_TCP="1" -DNETSTACK_CONF_WITH_IPV6="1" -DUIP_CONF_IPV6_RPL="1" -DAUTOSTART_ENABLE="1"-o spirit1_stm32l152re_nucleo\exe\leds.o --omf_browse spirit1_stm32l152re_nucleo\exe\leds.crf --depend spirit1_stm32l152re_nucleo\exe\leds.d)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/dev/leds.h)(0x5BA85E5A)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/contiki-conf.h)(0x5BFB9B96)
@@ -5710,7 +5762,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-arch.h)(0x5BA85E5A)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/st-lib.h)(0x5C10D834)
@@ -5860,7 +5912,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-driver.h)(0x5BFB62F0)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-const.h)(0x5C10D812)
@@ -5968,7 +6020,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-driver.h)(0x5BFB62F0)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-const.h)(0x5C10D812)
@@ -6070,7 +6122,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/st-lib.h)(0x5C10D834)
 I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/MCU_Interface.h)(0x5BA85E56)
 I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/SPIRIT_Types.h)(0x5BA85E56)
@@ -6185,7 +6237,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-driver.h)(0x5BFB62F0)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/radio-const.h)(0x5C10D812)
@@ -6363,7 +6415,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Drivers/BSP/X-NUCLEO-IDS01Ax/Inc/radio_gpio.h)(0x5BA85E56)
 I (../../../../../../../Drivers/BSP/STM32L1xx_Nucleo/stm32l1xx_nucleo.h)(0x5C639721)
@@ -6451,7 +6503,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/st-lib.h)(0x5C10D834)
 I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/MCU_Interface.h)(0x5BA85E56)
 I (../../../../../../../Drivers/BSP/Components/spirit1/SPIRIT1_Library/Inc/SPIRIT_Types.h)(0x5BA85E56)
@@ -6571,7 +6623,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki.h)(0x5BA85E5A)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki-version.h)(0x5BA85E5A)
@@ -6670,7 +6722,7 @@ I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h)(0
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_usart.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_irda.h)(0x5BA85E5A)
 I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_smartcard.h)(0x5BA85E5A)
-I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5BA85E5A)
+I (../../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_wwdg.h)(0x5C6A23D5)
 I (../../Inc/stm32l1xx_it.h)(0x5C00BDC8)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki.h)(0x5BA85E5A)
 I (../../../../../../../Middlewares/Third_Party/Contiki/core/contiki-version.h)(0x5BA85E5A)

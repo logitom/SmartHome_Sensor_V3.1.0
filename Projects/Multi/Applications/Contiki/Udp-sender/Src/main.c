@@ -101,7 +101,7 @@ int main()
   /* Initialize LEDs */
   BSP_LED_Init(LED2);
   BSP_LED_Init(LED_ALARM);
- 
+  
   RadioShieldLedInit(RADIO_SHIELD_LED);
   
   BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);

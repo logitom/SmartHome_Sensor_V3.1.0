@@ -257,7 +257,7 @@ void MX_GPIO_Init(void)
   __HAL_RCC_TIM5_CLK_ENABLE();
   __TIM2_CLK_ENABLE();
   __TIM3_CLK_ENABLE();
- 
+  __HAL_RCC_WWDG_CLK_ENABLE();
  
     /*Configure GPIO pin : PD2 */
   GPIO_InitStruct.Pin = GPIO_PIN_2;

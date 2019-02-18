@@ -48,6 +48,8 @@
 #include "st-lib.h"
 #include "main.h"
 #include "low-power.h"
+#include "stm32l1xx_hal_wwdg.h"
+//#include "stm32l1xx_hal.h"
 
 /** @addtogroup Udp_sender
 * @{
@@ -146,7 +148,7 @@ struct sensor
 }
 #endif
 
-
+static void MX_WWDG_Init(void);
 
 
 
@@ -181,7 +183,8 @@ static unsigned long int message_number = 0;
 extern TIM_HandleTypeDef htim3;
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
-AUTOSTART_PROCESSES(&unicast_sender_process);
+//PROCESS(watchdog_process, "watchdog process");
+AUTOSTART_PROCESSES(&unicast_sender_process);//,&watchdog_process);
 /*---------------------------------------------------------------------------*/
 static void
 receiver(struct simple_udp_connection *c,
@@ -363,14 +366,15 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   simple_udp_register(&unicast_connection, UDP_PORT,
                       NULL, UDP_PORT, receiver);
 
-  char buf[50];
-  memset(buf,0,3);
+  //char buf[50];
+  //memset(buf,0,3);
  // memset(&buf[3],6,47);
  // ctimer_set(&send_timer, APP_DUTY_CYCLE_SLOT * CLOCK_SECOND, periodic_sender, NULL);
 //buzzer start
  //Buzzer_On();
  //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1); 
  //BSP_LED_On(LED_ALARM);
+ printf("unicast_sender_process \r\n");
   while(1) {
     PROCESS_WAIT_EVENT();
     //if(ev == sensors_event || (ev==PROCESS_EVENT_TIMER && data==&periodic_timer)){
@@ -397,11 +401,10 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       if (addr == NULL)  { //Actually can happen only when servreg_hack service is on
 
           addr = servreg_hack_lookup(SERVICE_ID);
-          printf("serer address is null\r\n");
+          printf("server address is null\r\n");
       }
       
-       // send sensor report data here
-      BSP_LED_Toggle(LED_GREEN);
+     
       
       door.cmd=0x03;
       door.device_type=0x03;
@@ -414,14 +417,17 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       // 0x01; // report type: 0,periodic 1,alarm
       //buf[1]=0x09; // device ID:0x04 door detector
      
-           
-      //sprintf(&buf[3], "Message %lu",  message_number);
-      simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door)+1,addr);// strlen(buf),addr);
-      printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
+      if(unicast_connection.udp_conn!=NULL)      
+      {
+          // send sensor report data here
+        BSP_LED_Toggle(LED_GREEN);
+        //sprintf(&buf[3], "Message %lu",  message_number);
+        simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door)+1,addr);// strlen(buf),addr);
+        printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
          //message_number++;
         //BSP_LED_On(LED3_ALARM);
         //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_4); 
-      
+      }
       
       printf("Door state: %d\n", door.sensor_data);       
       etimer_reset_with_new_interval(&periodic_timer,rand()%LOOP_INTERVAL);
@@ -432,6 +438,96 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   }
   PROCESS_END();
 }
+
+WWDG_HandleTypeDef hwwdg;
+
+static void MX_WWDG_Init(void)
+{
+  
+  hwwdg.Instance = WWDG;
+  hwwdg.Init.Prescaler = WWDG_PRESCALER_8;
+  hwwdg.Init.Window = 64;
+  hwwdg.Init.Counter = 127;
+  hwwdg.Init.EWIMode = WWDG_EWI_ENABLE;
+  if (HAL_WWDG_Init(&hwwdg) != HAL_OK)
+  {
+    printf("watch dog MX_WWDG_Init failed \r\n");
+  }
+  #if 0
+  hwwdg.Init.Counter = 127;
+  if (HAL_WWDG_Init(&hwwdg) != HAL_OK)
+  {
+      printf("EWI watch dog MX_WWDG_Init failed \r\n");  
+  }   
+  #endif  
+}
+
+/*---------------------------------------------------------------------------*/
+PROCESS_THREAD(watchdog_process, ev, data)
+{
+  
+    
+  PROCESS_BEGIN();    
+    
+  MX_WWDG_Init();    
+      
+	/* Check if the system has resumed from WWDG reset */
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_WWDGRST) != RESET)
+	{
+		
+	  printf("watch dog reset \r\n");	
+		/* Clear reset flags */
+		__HAL_RCC_CLEAR_RESET_FLAGS();
+	}
+	else
+	{
+	  printf("watch dog init \r\n");	    
+	}    
+   
+   
+     
+  
+    while(1){
+    /* WWDG clock = (PCLK1(32MHz)/4096)/8) = 976.56 Hz (1.02ms)
+		 * Timeout = ~1.02 ms * (127-63) = 65.28 ms // 0x40=64 
+		 * Refresh = ~1.02 ms * (127-80) = 47.94 ms // window
+		 * Window = 47.94 ms to 65.28 ms */
+	 
+    HAL_Delay(50);
+		
+	//	while (HAL_GPIO_ReadPin(SW_GPIO_Port, SW_Pin) == GPIO_PIN_RESET);
+		
+    HAL_WWDG_Refresh(&hwwdg);
+    printf("watch dog refresh \r\n");  
+     
+    }
+    PROCESS_END();  
+}
+
+
+/**
+  * @brief  WWDG Early Wakeup callback.
+  * @param  hwwdg  pointer to a WWDG_HandleTypeDef structure that contains
+  *                the configuration information for the specified WWDG module.
+  * @retval None
+  */
+ void HAL_WWDG_EarlyWakeupCallback(WWDG_HandleTypeDef* hwwdg)
+{
+  /* Prevent unused argument(s) compilation warning */
+  hwwdg->Init.Counter = 127;
+  
+  printf("HAL_WWDG_EarlyWakeupCallback \r\n");
+  if (HAL_WWDG_Init(hwwdg) != HAL_OK)
+  {
+      printf("EWI watch dog MX_WWDG_Init failed \r\n");  
+  }   
+  //UNUSED(hwwdg);
+
+  /* NOTE: This function should not be modified, when the callback is needed,
+           the HAL_WWDG_EarlyWakeupCallback could be implemented in the user file
+   */
+}
+
 /**
 * @}
 */
