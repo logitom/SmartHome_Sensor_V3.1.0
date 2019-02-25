@@ -72,6 +72,9 @@
 
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
+#define MAX_RECORD 10
+#define CMD_DISABLE_ALARM 90
+#define CMD_DISABLE_ALARM_ACK 91
 /*---------------------------------------------------------------------------*/
 #define APP_DUTY_CYCLE_SLOT  3
 /*---------------------------------------------------------------------------*/
@@ -148,7 +151,11 @@ struct sensor
 }
 #endif
 
+
+
+
 static void MX_WWDG_Init(void);
+
 
 
 
@@ -176,15 +183,54 @@ static struct simple_udp_connection unicast_connection;
 #if !SERVREG_HACK_ENABLED
 static uip_ipaddr_t server_ipaddr;
 #endif /*!SERVREG_HACK_ENABLED*/
+
+
 static uip_ipaddr_t *addr = NULL;
 static struct ctimer send_timer;
 static unsigned long int message_number = 0;
 
 extern TIM_HandleTypeDef htim3;
+
+enum {
+
+  EVENT_COMMAND=0x01,
+};
+
+typedef struct 
+{
+    uint8_t cmd;
+    uint8_t device_type;
+    uint8_t alarm_status;
+    uint8_t index;
+    uint8_t status;
+    uint8_t sensor_type;
+    uint8_t sensor_data;
+    uint8_t battery;
+    
+}sensor_pkt;
+
+
+struct pkt_data{
+uint8_t valid_bit;
+uip_ipaddr_t node_addr;
+uint8_t received_data[100];
+uint16_t datalen;
+};  
+
+struct pkt_data data_buffer[1];
+sensor_pkt *spkt; 
+
+
+
+static uint8_t received_counter=0;
+
+
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
+PROCESS(data_receiver_process,"data from server process");
+
 //PROCESS(watchdog_process, "watchdog process");
-AUTOSTART_PROCESSES(&unicast_sender_process);//,&watchdog_process);
+AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process);//,&watchdog_process);
 /*---------------------------------------------------------------------------*/
 static void
 receiver(struct simple_udp_connection *c,
@@ -195,11 +241,39 @@ receiver(struct simple_udp_connection *c,
          const uint8_t *data,
          uint16_t datalen)
 {
+ 
+#if 0
   printf("Data received %s: from:",
          data);
   
-  uip_debug_ipaddr_print(sender_addr);
-  printf("\r\n");
+    uip_debug_ipaddr_print(sender_addr);
+    printf("\r\n");
+#endif
+//1. create a new thread
+//2. add new event
+//3. disable alarm :90
+//4. ack :91  
+ #if 0   
+    if((received_counter%MAX_RECORD)==0)
+    {
+        received_counter=0;
+    } 
+#endif    
+    memcpy(&data_buffer[received_counter].node_addr,sender_addr,sizeof(uip_ipaddr_t));
+    memcpy(&data_buffer[received_counter].received_data,data,sizeof(uint8_t)*datalen);
+
+    data_buffer[received_counter].datalen=datalen;
+    data_buffer[received_counter].valid_bit=1;
+   // received_counter++;
+
+    printf("\r\n recevied data from: \r\n");
+ 
+    uip_debug_ipaddr_print(sender_addr);
+    printf("\r\n datalen:%d\r\n",datalen);
+      
+  
+    process_post(&data_receiver_process,EVENT_COMMAND,NULL);      
+  
 }
 #if MCU_LOW_POWER
 /*---------------------------------------------------------------------------*/
@@ -358,14 +432,15 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
 #endif /*!SERVREG_HACK_ENABLED*/
 
   PROCESS_BEGIN();
-
+  
 #if SERVREG_HACK_ENABLED
   servreg_hack_init();
 #endif /*SERVREG_HACK_ENABLED*/
   set_global_address();
   simple_udp_register(&unicast_connection, UDP_PORT,
                       NULL, UDP_PORT, receiver);
-
+  
+ // process_start(&data_receiver_process, NULL);
   //char buf[50];
   //memset(buf,0,3);
  // memset(&buf[3],6,47);
@@ -409,7 +484,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       door.cmd=0x03;
       door.device_type=0x03;
       door.alarm_status=1; // 1: alarm was triggered
-      door.index=0;
+      door.index=1;
       door.status=3;
       door.sensor_type=0x0a;
       door.sensor_data=1;
@@ -422,11 +497,11 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
           // send sensor report data here
         BSP_LED_Toggle(LED_GREEN);
         //sprintf(&buf[3], "Message %lu",  message_number);
-        simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door)+1,addr);// strlen(buf),addr);
+        simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door),addr);// strlen(buf),addr);
         printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
-         //message_number++;
-        //BSP_LED_On(LED3_ALARM);
-        //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_4); 
+         //message_number++;LED_ALARM
+        BSP_LED_On(LED_ALARM);
+        HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);  
       }
       
       printf("Door state: %d\n", door.sensor_data);       
@@ -461,6 +536,35 @@ static void MX_WWDG_Init(void)
   }   
   #endif  
 }
+/*---------------------------------------------------------------------------*/
+PROCESS_THREAD(data_receiver_process, ev, data)
+{
+  
+    
+  PROCESS_BEGIN();    
+    
+    while(1){
+    PROCESS_WAIT_EVENT();  
+    if(ev==EVENT_COMMAND)   
+    {
+        spkt=(sensor_pkt*)&data_buffer[1].received_data;
+      
+        if(spkt->cmd==CMD_DISABLE_ALARM)
+        {
+            spkt->cmd=CMD_DISABLE_ALARM_ACK;
+            BSP_LED_Off(LED_ALARM);
+            HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
+            simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[1].node_addr );
+            printf(" disable command ACK\r\n");
+        }           
+    }// end of EVENT_COMMAND       
+    
+    }
+    PROCESS_END();  
+}
+
+
+
 
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(watchdog_process, ev, data)

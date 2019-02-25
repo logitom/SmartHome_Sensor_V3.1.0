@@ -107,8 +107,8 @@ int main()
   BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
   
   /* Initialize RTC */
-  RTC_Config();
-  RTC_TimeStampConfig();
+ // RTC_Config();
+ // RTC_TimeStampConfig();
   _print_fw_info();
   
   Stack_6LoWPAN_Init();

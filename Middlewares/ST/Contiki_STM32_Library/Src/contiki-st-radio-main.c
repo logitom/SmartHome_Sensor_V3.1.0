@@ -196,7 +196,7 @@ void Stack_6LoWPAN_Init(void)
   PRINTF("Contiki and Sub-GHz Radio correctly configured... Starting all processes\n");
   
 #ifndef SERIAL_SNIFFER  
-  process_start(&sensors_process, NULL);
+ // process_start(&sensors_process, NULL);
 #endif /*SERIAL_SNIFFER*/
   autostart_start(autostart_processes);
   
