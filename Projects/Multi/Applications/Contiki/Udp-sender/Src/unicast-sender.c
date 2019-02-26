@@ -153,7 +153,6 @@ struct sensor
 
 
 
-
 static void MX_WWDG_Init(void);
 
 
@@ -194,6 +193,7 @@ extern TIM_HandleTypeDef htim3;
 enum {
 
   EVENT_COMMAND=0x01,
+  EVENT_TEST=0x02,
 };
 
 typedef struct 
@@ -232,6 +232,12 @@ PROCESS(data_receiver_process,"data from server process");
 //PROCESS(watchdog_process, "watchdog process");
 AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process);//,&watchdog_process);
 /*---------------------------------------------------------------------------*/
+void Sent_Testing_Data(void)
+{
+  process_post(&unicast_sender_process,EVENT_TEST,NULL);      
+}  
+/*---------------------------------------------------------------------------*/
+
 static void
 receiver(struct simple_udp_connection *c,
          const uip_ipaddr_t *sender_addr,
@@ -456,8 +462,8 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
  printf("unicast_sender_process \r\n");
   while(1) {
     PROCESS_WAIT_EVENT();
-    //if(ev == sensors_event || (ev==PROCESS_EVENT_TIMER && data==&periodic_timer)){
-    if(ev==PROCESS_EVENT_TIMER && data==&periodic_timer){  
+    if(ev == EVENT_TEST || (ev==PROCESS_EVENT_TIMER && data==&periodic_timer)){
+   // if(ev==PROCESS_EVENT_TIMER && data==&periodic_timer){  
 #if MCU_LOW_POWER
     	if (from_stop
 #  if LP_PERIPHERAL_IN_SLEEP
@@ -484,8 +490,13 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       }
       
      
-      
-      door.cmd=0x03;
+      if(ev == EVENT_TEST)
+      {
+          door.cmd=0x03;
+      }else
+      {
+          door.cmd=0x02;
+      }
       door.device_type=0x03;
       door.alarm_status=1; // 1: alarm was triggered
       door.index=1;

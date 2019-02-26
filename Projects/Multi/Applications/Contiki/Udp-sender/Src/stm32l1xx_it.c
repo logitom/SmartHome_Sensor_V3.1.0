@@ -41,7 +41,7 @@
 #include "main.h"
 #include "sensors.h"
 #include "low-power.h"
-
+#include "main.h"
 /** @addtogroup L1
  *  @ingroup Udp_sender
  *  @{
@@ -216,12 +216,17 @@ void EXTI2_IRQHandler(void)
 /*----------------------------------------------------------------------------*/
 void EXTI3_IRQHandler(void)
 {
+   Sent_Testing_Data();
+  
+   __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_3);    
+#if 0  
   /* EXTI line interrupt detected */
   if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_3) != RESET) 
   { 
     __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_3);
   }
   while(1);
+#endif
 }
 /*----------------------------------------------------------------------------*/
 /**
@@ -371,9 +376,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		LP_interrupt_from_radio = 1;
 	}
 #endif /*MCU_LOW_POWER*/
-	if (GPIO_Pin == GPIO_PIN_2)
+	if (GPIO_Pin == GPIO_PIN_3)
 	{
-	  sensors_changed(&button_sensor);
+	  ;//sensors_changed(&button_sensor);
+    
 	}
 }
 /*----------------------------------------------------------------------------*/

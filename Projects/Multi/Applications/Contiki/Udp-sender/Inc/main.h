@@ -95,6 +95,7 @@ struct sensor_pkt
     uint8_t battery;
 };
 
+void Sent_Testing_Data(void);
 
 #ifdef __cplusplus
 }
