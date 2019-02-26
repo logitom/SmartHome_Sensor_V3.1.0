@@ -73,8 +73,8 @@
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
 #define MAX_RECORD 10
-#define CMD_DISABLE_ALARM 90
-#define CMD_DISABLE_ALARM_ACK 91
+#define CMD_DISABLE_ALARM 0x04
+#define CMD_DISABLE_ALARM_ACK 0x5b
 /*---------------------------------------------------------------------------*/
 #define APP_DUTY_CYCLE_SLOT  3
 /*---------------------------------------------------------------------------*/
@@ -251,7 +251,7 @@ receiver(struct simple_udp_connection *c,
 #endif
 //1. create a new thread
 //2. add new event
-//3. disable alarm :90
+//3. 
 //4. ack :91  
  #if 0   
     if((received_counter%MAX_RECORD)==0)
@@ -259,11 +259,15 @@ receiver(struct simple_udp_connection *c,
         received_counter=0;
     } 
 #endif    
-    memcpy(&data_buffer[received_counter].node_addr,sender_addr,sizeof(uip_ipaddr_t));
-    memcpy(&data_buffer[received_counter].received_data,data,sizeof(uint8_t)*datalen);
+    //memcpy(&data_buffer[received_counter].node_addr,sender_addr,sizeof(uip_ipaddr_t));
+    //memcpy(&data_buffer[received_counter].received_data,data,sizeof(uint8_t)*datalen);
+    
+    memcpy(&data_buffer[0].node_addr,sender_addr,sizeof(uip_ipaddr_t));
+    memcpy(&data_buffer[0].received_data,data,sizeof(uint8_t)*datalen);
 
-    data_buffer[received_counter].datalen=datalen;
-    data_buffer[received_counter].valid_bit=1;
+      
+    data_buffer[0].datalen=datalen;
+    data_buffer[0].valid_bit=1;
    // received_counter++;
 
     printf("\r\n recevied data from: \r\n");
@@ -501,7 +505,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
         printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
          //message_number++;LED_ALARM
         BSP_LED_On(LED_ALARM);
-        HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);  
+        //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);  
       }
       
       printf("Door state: %d\n", door.sensor_data);       
@@ -547,14 +551,14 @@ PROCESS_THREAD(data_receiver_process, ev, data)
     PROCESS_WAIT_EVENT();  
     if(ev==EVENT_COMMAND)   
     {
-        spkt=(sensor_pkt*)&data_buffer[1].received_data;
+        spkt=(sensor_pkt*)&data_buffer[0].received_data;
       
         if(spkt->cmd==CMD_DISABLE_ALARM)
         {
             spkt->cmd=CMD_DISABLE_ALARM_ACK;
             BSP_LED_Off(LED_ALARM);
             HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
-            simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[1].node_addr );
+            simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );
             printf(" disable command ACK\r\n");
         }           
     }// end of EVENT_COMMAND       
