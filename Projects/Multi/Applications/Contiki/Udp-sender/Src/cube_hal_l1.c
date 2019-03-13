@@ -38,7 +38,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "cube_hal.h"
 #include "main.h"
-
+//#include "hw-config.h"
 /** @defgroup cube_hal_l1
   * @ingroup Udp_sender
   * @{
@@ -48,6 +48,12 @@
   * @ingroup Udp_sender
   * @{
   */
+
+#define I2C_SPEEDCLOCK   100000
+#define I2C_DUTYCYCLE    I2C_DUTYCYCLE_2
+
+/* I2C handler declaration */
+I2C_HandleTypeDef I2cHandle;
 
 RTC_HandleTypeDef RtcHandle;
 
@@ -205,7 +211,8 @@ void MX_GPIO_Init(void)
 	__HAL_RCC_GPIOF_CLK_ENABLE();
 	__HAL_RCC_GPIOG_CLK_ENABLE();
 	__HAL_RCC_GPIOH_CLK_ENABLE();
-#if 0
+
+#if 1
 	GPIO_InitStructure.Mode=GPIO_MODE_ANALOG;
 	GPIO_InitStructure.Pull=GPIO_NOPULL;
 	GPIO_InitStructure.Pin=GPIO_PIN_All;
@@ -255,6 +262,9 @@ void MX_GPIO_Init(void)
   __HAL_RCC_TIM2_CLK_ENABLE();
   __HAL_RCC_TIM3_CLK_ENABLE();
   __HAL_RCC_TIM5_CLK_ENABLE();
+  
+ // __HAL_RCC_GPIOB_CLK_ENABLE();
+ // __HAL_RCC_I2C1_CLK_ENABLE();
   __TIM2_CLK_ENABLE();
   __TIM3_CLK_ENABLE();
   __HAL_RCC_WWDG_CLK_ENABLE();
@@ -286,6 +296,30 @@ void Error_Handler(void)
 	  HAL_Delay(250);
   }
 }
+
+void MX_I2C_Init(void)
+{
+    /*##-1- Configure the I2C peripheral ######################################*/
+  I2cHandle.Instance              = I2Cx;
+  I2cHandle.Init.ClockSpeed       = I2C_SPEEDCLOCK;
+  I2cHandle.Init.DutyCycle        = I2C_DUTYCYCLE;
+  I2cHandle.Init.AddressingMode   = I2C_ADDRESSINGMODE_7BIT;
+  I2cHandle.Init.DualAddressMode  = I2C_DUALADDRESS_DISABLE;
+  I2cHandle.Init.GeneralCallMode  = I2C_GENERALCALL_DISABLE;
+  I2cHandle.Init.NoStretchMode    = I2C_NOSTRETCH_DISABLE;  
+  I2cHandle.Init.OwnAddress1      = 0xA0;//I2C_ADDRESS;
+  I2cHandle.Init.OwnAddress2      = 0xFF;
+  
+  if(HAL_I2C_Init(&I2cHandle) != HAL_OK)
+  {
+    /* Initialization Error */
+    Error_Handler();
+  }
+
+  
+  
+}  
+
 
 /**
  * @}

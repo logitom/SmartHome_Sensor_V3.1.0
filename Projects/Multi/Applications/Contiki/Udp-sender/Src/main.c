@@ -87,6 +87,9 @@ int main()
   
   BUZZERConfig();
   
+  /* 8-bit mcu I2C */ 
+  MX_I2C_Init();
+  
   
 #if MCU_LOW_POWER
   if (USER_CLOCK_FREQUENCY != DEFAULT_CLOCK_FREQUENCY) {
@@ -112,7 +115,10 @@ int main()
   _print_fw_info();
   
   Stack_6LoWPAN_Init();
-
+  
+  
+  
+  
   while(1) {
     int r = 0;
 #if MCU_LOW_POWER

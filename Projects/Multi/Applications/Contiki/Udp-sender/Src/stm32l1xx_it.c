@@ -67,6 +67,9 @@ extern volatile rtimer_clock_t rtimer_clock;
 #if RADIO_USES_CONTIKIMAC
 extern volatile rtimer_clock_t timeout_value;
 #endif /*RADIO_USES_CONTIKIMAC*/
+
+extern I2C_HandleTypeDef I2cHandle;
+
 /******************************************************************************/
 /*            Cortex-M3 Processor Exceptions Handlers                         */
 /******************************************************************************/
@@ -170,6 +173,49 @@ void PendSV_Handler(void)
 /*  available peripheral interrupt handler's name please refer to the startup */
 /*  file (startup_stm32l1xx.s).                                               */
 /******************************************************************************/
+
+void I2Cx_EV_IRQHandler(void)
+{
+  HAL_I2C_EV_IRQHandler(&I2cHandle);
+}
+
+/**
+  * @brief  This function handles I2C error interrupt request.
+  * @param  None
+  * @retval None
+  * @Note   This function is redefined in "main.h" and related to I2C error
+  */
+void I2Cx_ER_IRQHandler(void)
+{
+  HAL_I2C_ER_IRQHandler(&I2cHandle);
+}
+
+/**
+  * @brief  This function handles DMA interrupt request.
+  * @param  None
+  * @retval None
+  * @Note   This function is redefined in "main.h" and related to DMA Channel 
+  *         used for I2C data transmission     
+  */
+void I2Cx_DMA_RX_IRQHandler(void)
+{
+  HAL_DMA_IRQHandler(I2cHandle.hdmarx);
+}
+
+/**
+  * @brief  This function handles DMA interrupt request.
+  * @param  None
+  * @retval None
+  * @Note   This function is redefined in "main.h" and related to DMA Channel 
+  *         used for I2C data reception    
+  */
+void I2Cx_DMA_TX_IRQHandler(void)
+{
+  HAL_DMA_IRQHandler(I2cHandle.hdmatx);
+}
+
+
+
 /**
 * @brief  This function handles External lines 15 to 4 interrupt request.
 * @param  None
