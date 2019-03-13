@@ -68,7 +68,7 @@
 //#  define LWM2M_SERVER_ADDRESS_v6 "aaaa::a00:f7ff:104e:efb1"
 #endif
 
-#define LOOP_INTERVAL		(10 * CLOCK_SECOND)
+#define LOOP_INTERVAL		(1 * CLOCK_SECOND)
 
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
@@ -194,7 +194,7 @@ enum {
 
   EVENT_COMMAND=0x01,
   EVENT_TEST=0x02,
-  EVENT_ALARM=0x03,
+  EVENT_ALARM=0x03,  
 };
 
 typedef struct 
@@ -225,19 +225,39 @@ sensor_pkt *spkt;
 uint8_t aRxBuffer[6];
 uint8_t aRxBuffer2[4];
 uint8_t aRxBuffer3[5];
-static uint8_t RxCounter=0;
+uint8_t RxCounter=0;
 
 static uint8_t received_counter=0;
-
+static uint8_t sensor_triggered=0;
 
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
 PROCESS(data_receiver_process,"data from server process");
-//PROCESS(alarm_process,"alarm triggered process");
+PROCESS(alarm_process,"alarm triggered process");
 //PROCESS(watchdog_process, "watchdog process");
 AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process);//,&watchdog_process);
 
 
+
+/*---------------------------------------------------------------------------*/
+PROCESS_THREAD(alarm_process, ev, data)
+{
+  
+    
+   PROCESS_BEGIN();    
+    
+    while(1){
+    PROCESS_WAIT_EVENT();  
+    if(ev==EVENT_ALARM)   
+    {
+       
+        printf("alarm_process\r\n");
+               
+    }// end of EVENT_COMMAND       
+    
+    }
+    PROCESS_END();  
+}
 
 /*---------------------------------------------------------------------------*/
 void Sent_Testing_Data(void)
@@ -459,8 +479,9 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
     } 
     HAL_I2C_Slave_Receive_DMA(I2cHandle, (uint8_t*)aRxBuffer3,5);
     RxCounter=0;
+    sensor_triggered=1;
     // call alarm thread    
-    // process_post(&alarm_process,EVENT_COMMAND,NULL); 
+    //process_post(&alarm_process,EVENT_ALARM,NULL); 
   }
 }
 
@@ -471,7 +492,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   static struct sensor_pkt door;
   static struct etimer periodic_timer;  
     
-  //etimer_set(&periodic_timer, LOOP_INTERVAL);
+  etimer_set(&periodic_timer, LOOP_INTERVAL);
 
   /*To skip autodetection of the receiver using the servreg service,
  * set SERVREG_HACK_ENABLED to 0 and uncomment one of the specific lines
@@ -496,8 +517,9 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   
   
   /* */
-   RxCounter++;
-  /*##-2- Put I2C peripheral in reception process ###########################*/  
+ 
+#if 0 
+ /*##-2- Put I2C peripheral in reception process ###########################*/  
   if(HAL_I2C_Slave_Receive_DMA(&I2cHandle, (uint8_t *)aRxBuffer, 6) != HAL_OK)
   {
     /* Transfer error in reception process */
@@ -516,11 +538,11 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   {
   }
   
- 
- printf("unicast_sender_process \r\n");
+ #endif
+  printf("unicast_sender_process \r\n");
   while(1) {
     PROCESS_WAIT_EVENT();
-    if(ev == EVENT_ALARM || (ev==PROCESS_EVENT_TIMER && data==&periodic_timer)){
+    if(ev==PROCESS_EVENT_TIMER ){
    // if(ev==PROCESS_EVENT_TIMER && data==&periodic_timer){  
 #if MCU_LOW_POWER
     	if (from_stop
@@ -542,44 +564,50 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
        //etimer_reset(&periodic_timer); 
       addr = servreg_hack_lookup(SERVICE_ID);   
      if (addr != NULL)  { //Actually can happen only when servreg_hack service is on
-
+     BSP_LED_Toggle(LED_GREEN);
         
          // printf("server address is null\r\n");
       
       
      
-      if(ev == EVENT_ALARM)
+      if(sensor_triggered ==1)
       {
           if(aRxBuffer[0]==0x01)
           {
             door.cmd=0x03;
             BSP_LED_On(LED_ALARM);
-           // HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+             HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+             door.device_type=0x03;//node
+             door.alarm_status=1; // 1: alarm was triggered
+             door.index=1;
+             door.status=3;
+             door.sensor_type=aRxBuffer2[0];
+             door.sensor_data=1;
+             door.battery=50;
+       
+            if(unicast_connection.udp_conn!=NULL)      
+            {
+                // send sensor report data here
+                BSP_LED_Toggle(LED_GREEN);
+                //sprintf(&buf[3], "Message %lu",  message_number);
+                simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door),addr);// strlen(buf),addr);
+                printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
+                //message_number++;LED_ALARM
+                sensor_triggered=0;
+            }
           }            
-      }else if(aRxBuffer[0]==0x00)
+      }
+      #if 0
+      else if(aRxBuffer[0]==0x00)
       {
           door.cmd=0x02;
       }
-      door.device_type=0x03;//node
-      door.alarm_status=1; // 1: alarm was triggered
-      door.index=1;
-      door.status=3;
-      door.sensor_type=aRxBuffer2[0];
-      door.sensor_data=1;
-      door.battery=50;
+      #endif
+     
       // 0x01; // report type: 0,periodic 1,alarm
       //buf[1]=0x09; // device ID:0x04 door detector
      
-      if(unicast_connection.udp_conn!=NULL)      
-      {
-          // send sensor report data here
-        BSP_LED_Toggle(LED_GREEN);
-        //sprintf(&buf[3], "Message %lu",  message_number);
-        simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door),addr);// strlen(buf),addr);
-        printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
-         //message_number++;LED_ALARM
       
-      }
       
       printf("Door state: %d\n", door.sensor_data);       
     //  etimer_reset_with_new_interval(&periodic_timer,rand()%LOOP_INTERVAL);

@@ -57,6 +57,8 @@ I2C_HandleTypeDef I2cHandle;
 
 RTC_HandleTypeDef RtcHandle;
 
+extern uint8_t RxCounter;
+extern uint8_t aRxBuffer[6];
 /**
   * @brief  Configure the RTC peripheral by selecting the clock source.
   * @param  None
@@ -316,6 +318,26 @@ void MX_I2C_Init(void)
     Error_Handler();
   }
 
+  RxCounter++;
+  /*##-2- Put I2C peripheral in reception process ###########################*/  
+  if(HAL_I2C_Slave_Receive_DMA(&I2cHandle, (uint8_t *)aRxBuffer, 6) != HAL_OK)
+  {
+    /* Transfer error in reception process */
+    Error_Handler();
+  }
+  
+  /*##-3- Wait for the end of the transfer ###################################*/  
+  /*  Before starting a new communication transfer, you need to check the current   
+      state of the peripheral; if it’s busy you need to wait for the end of current
+      transfer before starting a new one.
+      For simplicity reasons, this example is just waiting till the end of the
+      transfer, but application may perform other tasks while transfer operation
+      is ongoing. */
+#if 0
+  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  }
+#endif  
   
   
 }  
