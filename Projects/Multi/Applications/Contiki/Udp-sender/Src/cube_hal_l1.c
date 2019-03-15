@@ -202,6 +202,7 @@ void MX_GPIO_Init(void)
 	GPIO_InitTypeDef GPIO_InitStructure= {0};
 	/* GPIO Ports Clock Enable */
 	__GPIOA_CLK_ENABLE();
+  __GPIOB_CLK_ENABLE();
 	__GPIOC_CLK_ENABLE();
   __GPIOD_CLK_ENABLE();
 	/* W.B.C: D, E, F, G and H GPIOs are set as ANALOG in NOPULL with clock disabled since
@@ -281,6 +282,28 @@ void MX_GPIO_Init(void)
    /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI3_IRQn); 
+  
+  
+  /* 8-bit mcu wake up pin */
+  
+
+}
+void MX_MCU_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct= {0}; 
+  
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  
+  /*Configure GPIO pin : PB7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);     
 }
 
 
@@ -309,7 +332,7 @@ void MX_I2C_Init(void)
   I2cHandle.Init.DualAddressMode  = I2C_DUALADDRESS_DISABLE;
   I2cHandle.Init.GeneralCallMode  = I2C_GENERALCALL_DISABLE;
   I2cHandle.Init.NoStretchMode    = I2C_NOSTRETCH_DISABLE;  
-  I2cHandle.Init.OwnAddress1      = 0xA0;//I2C_ADDRESS;
+  I2cHandle.Init.OwnAddress1      = I2C_ADDRESS;
   I2cHandle.Init.OwnAddress2      = 0xFF;
   
   if(HAL_I2C_Init(&I2cHandle) != HAL_OK)
@@ -317,7 +340,7 @@ void MX_I2C_Init(void)
     /* Initialization Error */
     Error_Handler();
   }
-
+#if 0
   RxCounter++;
   /*##-2- Put I2C peripheral in reception process ###########################*/  
   if(HAL_I2C_Slave_Receive_DMA(&I2cHandle, (uint8_t *)aRxBuffer, 6) != HAL_OK)
@@ -325,7 +348,7 @@ void MX_I2C_Init(void)
     /* Transfer error in reception process */
     Error_Handler();
   }
-  
+#endif  
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
       state of the peripheral; if it’s busy you need to wait for the end of current

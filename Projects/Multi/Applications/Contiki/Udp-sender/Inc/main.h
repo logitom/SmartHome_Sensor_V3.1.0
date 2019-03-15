@@ -125,6 +125,8 @@ extern "C" {
 /* Exported functions ------------------------------------------------------- */
 
 
+#define I2C_ADDRESS      0xA0
+
 struct sensor_pkt
 {
     uint8_t cmd;

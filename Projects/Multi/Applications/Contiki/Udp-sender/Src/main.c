@@ -83,10 +83,13 @@ int main()
   HAL_EnableDBGStopMode();
   
   MX_GPIO_Init();
+  
+    
   USARTConfig();
   
   BUZZERConfig();
   
+  MX_MCU_Init();
   /* 8-bit mcu I2C */ 
   MX_I2C_Init();
   

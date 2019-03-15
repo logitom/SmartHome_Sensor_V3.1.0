@@ -60,7 +60,7 @@ void SystemClock_Config(void);
 void RTC_Config(void);
 void RTC_TimeStampConfig(void);
 
-
+void MX_MCU_Init(void);
 void MX_I2C_Init(void);
 void USARTConfig(void);
 void BUZZERConfig(void);
