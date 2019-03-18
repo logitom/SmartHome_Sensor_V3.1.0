@@ -205,7 +205,8 @@ typedef struct
     uint8_t index;
     uint8_t status;
     uint8_t sensor_type;
-    uint8_t sensor_data;
+    uint8_t sensor_data_len;
+    uint8_t sensor_data[100];
     uint8_t battery;
     
 }sensor_pkt;
@@ -228,7 +229,7 @@ uint8_t aRxBuffer3[5]={0,0,0,0,0};
 uint8_t RxCounter=0;
 
 uint8_t aTxBuffer[6]={0x00,0xAE,0x8C,0x07,0x20,0x01};
-uint8_t aTxBuffer2[4]={0x08,0x06,0x01,0x04};
+uint8_t aTxBuffer2[4]={0x08,0x07,0x01,0x04};
 uint8_t aTxBuffer3[5]={0x08,0x55,0xAA,0x55,0xAA};
 static uint8_t received_counter=0;
 static uint8_t sensor_triggered=0;
@@ -470,42 +471,18 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
   }
 }
 
-/*---------------------------------------------------------------------------*/
-PROCESS_THREAD(unicast_sender_process, ev, data)
+
+/*****************************************************************
+Function: I2C_Sensor_Write
+Desription: Write command to sensor.
+
+comment: function header define in main.h
+
+******************************************************************/
+void I2C_Sensor_Write(void)
 {
-
-
-  int i;
-  static struct sensor_pkt door;
-  static struct etimer periodic_timer;  
-    
-  etimer_set(&periodic_timer, LOOP_INTERVAL);
-
-  /*To skip autodetection of the receiver using the servreg service,
- * set SERVREG_HACK_ENABLED to 0 and uncomment one of the specific lines
- * (hardcoded server address or multicast message) and set the addr pointer.
- */
-#if !SERVREG_HACK_ENABLED
-  uiplib_ip6addrconv(LWM2M_SERVER_ADDRESS_v6, &server_ipaddr); //Hardcoded Server (set accordingly)
-  //uip_create_linklocal_allnodes_mcast(&server_ipaddr); //Multicast UDP message.
-  addr = &server_ipaddr; //We set it in hardcoded or multicast case...
-#else /*SERVREG_HACK_ENABLED*/
-  addr = NULL; //... otherwise we leave it to NULL and servreg will sort this out
-#endif /*!SERVREG_HACK_ENABLED*/
-
-  PROCESS_BEGIN();
-  
-#if SERVREG_HACK_ENABLED
-  servreg_hack_init();
-#endif /*SERVREG_HACK_ENABLED*/
-  set_global_address();
-  simple_udp_register(&unicast_connection, UDP_PORT,
-                      NULL, UDP_PORT, receiver);
-  
-  
-  /* */
+  int i=0;
  
-#if 1 
  
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
     HAL_Delay(5);
@@ -584,27 +561,76 @@ for(i=0;i<5;i++)
   {
   }
   
-
 } 
+    
+}  
 
 
+/*****************************************************************
+Function: I2C_Sensor_Query
+Desription: To know which sensor is connected with the node.
+
+comment: function header define in main.h
+
+******************************************************************/
+void I2C_Sensor_Query(void)
+{
+ 
+    I2C_Sensor_Write();
   
+    while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+    {
+    } 
   
-  //HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
+    HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
   
-  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
-  {
-  } 
+    RxCounter++;
+
+}  
+
+
+/*---------------------------------------------------------------------------*/
+PROCESS_THREAD(unicast_sender_process, ev, data)
+{
+
+
+  int i;
+  static struct sensor_pkt  pkt;
+  static struct etimer periodic_timer;  
+    
+  etimer_set(&periodic_timer, LOOP_INTERVAL);
+
+  /*To skip autodetection of the receiver using the servreg service,
+ * set SERVREG_HACK_ENABLED to 0 and uncomment one of the specific lines
+ * (hardcoded server address or multicast message) and set the addr pointer.
+ */
+#if !SERVREG_HACK_ENABLED
+  uiplib_ip6addrconv(LWM2M_SERVER_ADDRESS_v6, &server_ipaddr); //Hardcoded Server (set accordingly)
+  //uip_create_linklocal_allnodes_mcast(&server_ipaddr); //Multicast UDP message.
+  addr = &server_ipaddr; //We set it in hardcoded or multicast case...
+#else /*SERVREG_HACK_ENABLED*/
+  addr = NULL; //... otherwise we leave it to NULL and servreg will sort this out
+#endif /*!SERVREG_HACK_ENABLED*/
+
+  PROCESS_BEGIN();
   
-  HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
+#if SERVREG_HACK_ENABLED
+  servreg_hack_init();
+#endif /*SERVREG_HACK_ENABLED*/
+  set_global_address();
+  simple_udp_register(&unicast_connection, UDP_PORT,
+                      NULL, UDP_PORT, receiver);
   
+ 
 
   
-  RxCounter++;
+  
+  
+ 
 
   // waiting for i2c response
 
- #endif
+
   printf("unicast_sender_process \r\n");
   while(1) {
     PROCESS_WAIT_EVENT();
@@ -633,31 +659,33 @@ for(i=0;i<5;i++)
      BSP_LED_Toggle(LED_GREEN);
         
      //printf("server address is null\r\n");
-      
+     // probe sensor function 
       
      
       if(sensor_triggered ==1)
       {
           if(aRxBuffer[0]==0x01)
           {
-            door.cmd=0x03;
-            BSP_LED_On(LED_ALARM);
+           
+             BSP_LED_On(LED_ALARM);
             //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
-             door.device_type=0x03;//node
-             door.alarm_status=1; // 1: alarm was triggered
-             door.index=1;
-             door.status=3;
-             door.sensor_type=aRxBuffer2[0];
-             door.sensor_data=1;
-             door.battery=50;
+             pkt.device_type=0x03;//node
+             pkt.alarm_status=aRxBuffer[0]; // 1: alarm was triggered
+             pkt.index=1;
+        
+             pkt.sensor_type=aRxBuffer2[0];
+             pkt.cmd=aRxBuffer2[1];
+             pkt.status=aRxBuffer2[2];
+            //door.sensor_data=1;
+             pkt.battery=50;
        
             if(unicast_connection.udp_conn!=NULL)      
             {
                 // send sensor report data here
                 BSP_LED_Toggle(LED_GREEN);
                 //sprintf(&buf[3], "Message %lu",  message_number);
-                simple_udp_sendto(&unicast_connection,(const void *)&door, sizeof(door),addr);// strlen(buf),addr);
-                printf("send a door alarm & sizeof door is:%d\r\n",sizeof(door));
+                simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);// strlen(buf),addr);
+                printf("send a door alarm & sizeof door is:%d\r\n",sizeof(pkt));
                 //message_number++;LED_ALARM
                 sensor_triggered=0;
             }
@@ -672,10 +700,8 @@ for(i=0;i<5;i++)
      
       // 0x01; // report type: 0,periodic 1,alarm
       //buf[1]=0x09; // device ID:0x04 door detector
-     
-      
-      
-      printf("Door state: %d\n", door.sensor_data);       
+  
+      printf("Door state: %d\n", pkt.sensor_data);       
     //  etimer_reset_with_new_interval(&periodic_timer,rand()%LOOP_INTERVAL);
       etimer_reset_with_new_interval(&periodic_timer,LOOP_INTERVAL);
       etimer_restart(&periodic_timer);  
