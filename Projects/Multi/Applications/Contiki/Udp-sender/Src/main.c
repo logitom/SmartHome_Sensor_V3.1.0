@@ -119,8 +119,17 @@ int main()
   
   Stack_6LoWPAN_Init();
   
-  
-  
+  //Jas add
+	
+//	BSP_LED_On(LED_GREEN); 
+	
+	
+  I2C_Sensor_Query();
+	
+	//Jas add
+	//while(1) {
+	//	
+	//}	
   
   while(1) {
     int r = 0;

@@ -73,7 +73,13 @@
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
 #define MAX_RECORD 10
-#define CMD_DISABLE_ALARM 0x04
+
+/* server command */
+#define CMD_DISABLE_ALARM  0x04
+#define CMD_ALARM_DISABLED 0x05
+#define CMD_LED_ON  0x06
+#define CMD_LED_OFF 0x07
+
 #define CMD_DISABLE_ALARM_ACK 0x5b
 /*---------------------------------------------------------------------------*/
 #define APP_DUTY_CYCLE_SLOT  3
@@ -194,7 +200,7 @@ enum {
 
   EVENT_COMMAND=0x01,
   EVENT_TEST=0x02,
-  EVENT_ALARM=0x03,  
+  EVENT_ALARM=0x03,
 };
 
 typedef struct 
@@ -206,7 +212,7 @@ typedef struct
     uint8_t status;
     uint8_t sensor_type;
     uint8_t sensor_data_len;
-    uint8_t sensor_data[100];
+    uint8_t sensor_data[4];
     uint8_t battery;
     
 }sensor_pkt;
@@ -241,13 +247,13 @@ PROCESS(data_receiver_process,"data from server process");
 AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process);//,&watchdog_process);
 
 
-
 /*---------------------------------------------------------------------------*/
 void Sent_Testing_Data(void)
 {
   process_post(&unicast_sender_process,EVENT_TEST,NULL);      
 }  
 /*---------------------------------------------------------------------------*/
+
 
 static void
 receiver(struct simple_udp_connection *c,
@@ -443,6 +449,7 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
   /* Toggle LED2: Transfer in reception process is correct */
   //BSP_LED_Toggle(LED2);
   RxCounter++;
+
   if(RxCounter==1)
   {
       
@@ -458,6 +465,7 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
      {
      } 
      HAL_I2C_Slave_Receive_DMA(I2cHandle, (uint8_t*)aRxBuffer2,4);
+
   
   }else if(RxCounter==3)
   {
@@ -469,6 +477,7 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
     sensor_triggered=1; //bootup flag
 
   }
+
 }
 
 
@@ -483,16 +492,24 @@ void I2C_Sensor_Write(void)
 {
   int i=0;
  
- 
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
-    HAL_Delay(5);
+
+    //jas mark
+    //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+    //HAL_Delay(5);
+    //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET ); 
+    //HAL_Delay(5);
+    //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+	
+	  //jas add
+	  //HAL_Delay(100);
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET ); 
-    HAL_Delay(5);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
-    //HAL_Delay(1);
+	  HAL_Delay(10);
+
+	
+
  /*##-2- Put I2C peripheral in reception process ###########################*/  
  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
- for(i=0;i<6;i++)
+for(i=0;i<6;i++)
 {
   //if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
   if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i], 1) != HAL_OK)
@@ -504,7 +521,7 @@ void I2C_Sensor_Write(void)
 
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it? busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -515,7 +532,10 @@ void I2C_Sensor_Write(void)
   }
   
 }  
- //HAL_Delay(1); 
+
+//jas add
+HAL_Delay(1); 
+
 for(i=0;i<4;i++)
 {    
  /*##-2- Put I2C peripheral in reception process ###########################*/  
@@ -528,7 +548,7 @@ for(i=0;i<4;i++)
   
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it? busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -537,8 +557,11 @@ for(i=0;i<4;i++)
   while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
   {
   }
-}  
- //HAL_Delay(1); 
+
+
+
+}
+ 
 for(i=0;i<5;i++)
 {   
  /*##-2- Put I2C peripheral in reception process ###########################*/  
@@ -551,7 +574,7 @@ for(i=0;i<5;i++)
   
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it? busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -561,7 +584,14 @@ for(i=0;i<5;i++)
   {
   }
   
-} 
+}
+
+//jas add
+HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+
+
+//HAL_Delay(10);
+
     
 }  
 
@@ -577,10 +607,13 @@ void I2C_Sensor_Query(void)
 {
  
     I2C_Sensor_Write();
+	
+	  //I2C_Sensor_Write();
   
-    while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
-    {
-    } 
+	  //jas mark
+    //while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+    //{
+    //} 
   
     HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
   
@@ -623,18 +656,13 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   
  
 
-  
-  
-  
- 
-
   // waiting for i2c response
 
 
   printf("unicast_sender_process \r\n");
   while(1) {
     PROCESS_WAIT_EVENT();
-    if(ev==PROCESS_EVENT_TIMER ){
+    if(ev==PROCESS_EVENT_TIMER || ev==EVENT_TEST){
    // if(ev==PROCESS_EVENT_TIMER && data==&periodic_timer){  
 #if MCU_LOW_POWER
     	if (from_stop
@@ -656,19 +684,21 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
        //etimer_reset(&periodic_timer); 
       addr = servreg_hack_lookup(SERVICE_ID);   
      if (addr != NULL)  { //Actually can happen only when servreg_hack service is on
-     BSP_LED_Toggle(LED_GREEN);
+     BSP_LED_Toggle(LED_GREEN);  ///jas mark
         
      //printf("server address is null\r\n");
      // probe sensor function 
       
      
-      if(sensor_triggered ==1)
+      if(sensor_triggered ==1 || ev==EVENT_TEST)
       {
-          if(aRxBuffer[0]==0x01)
-          {
-           
-             BSP_LED_On(LED_ALARM);
-            //HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+          
+                    
+             if(aRxBuffer[0]==0x01|| ev==EVENT_TEST) 
+             { 
+                 HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+                 BSP_LED_On(LED_ALARM);
+             }
              pkt.device_type=0x03;//node
              pkt.alarm_status=aRxBuffer[0]; // 1: alarm was triggered
              pkt.index=1;
@@ -676,7 +706,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
              pkt.sensor_type=aRxBuffer2[0];
              pkt.cmd=aRxBuffer2[1];
              pkt.status=aRxBuffer2[2];
-            //door.sensor_data=1;
+             memcpy((void*)&pkt.sensor_data,aRxBuffer3,4);
              pkt.battery=50;
        
             if(unicast_connection.udp_conn!=NULL)      
@@ -685,23 +715,17 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                 BSP_LED_Toggle(LED_GREEN);
                 //sprintf(&buf[3], "Message %lu",  message_number);
                 simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);// strlen(buf),addr);
-                printf("send a door alarm & sizeof door is:%d\r\n",sizeof(pkt));
+                printf("send a alarm & data len:%d\r\n",sizeof(pkt));
                 //message_number++;LED_ALARM
                 sensor_triggered=0;
             }
-          }            
-      }
-      #if 0
-      else if(aRxBuffer[0]==0x00)
-      {
-          door.cmd=0x02;
-      }
-      #endif
+     }
+    
      
       // 0x01; // report type: 0,periodic 1,alarm
       //buf[1]=0x09; // device ID:0x04 door detector
   
-      printf("Door state: %d\n", pkt.sensor_data);       
+     // printf("Sensor d: %d\n", pkt.sensor_data);       
     //  etimer_reset_with_new_interval(&periodic_timer,rand()%LOOP_INTERVAL);
       etimer_reset_with_new_interval(&periodic_timer,LOOP_INTERVAL);
       etimer_restart(&periodic_timer);  
@@ -754,7 +778,18 @@ PROCESS_THREAD(data_receiver_process, ev, data)
             HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
             simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );
             printf(" disable command ACK\r\n");
-        }           
+        
+        }else if(spkt->cmd==CMD_LED_ON)
+        {
+            aTxBuffer2[1]=0x06; //led off                   
+            I2C_Sensor_Write();      
+        }else if(spkt->cmd==CMD_LED_OFF)
+        {
+            aTxBuffer2[1]=0x07; //led on                    
+            I2C_Sensor_Write();    
+          
+        }          
+
     }// end of EVENT_COMMAND       
     
     }

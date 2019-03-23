@@ -298,12 +298,14 @@ void MX_MCU_Init(void)
   /*Configure GPIO pin : PB7 */
   GPIO_InitStruct.Pin = GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  //GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;                       //jas modify
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
   
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);     
+  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);   //jas mark
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);       //jas add   
 }
 
 
@@ -351,7 +353,7 @@ void MX_I2C_Init(void)
 #endif  
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it? busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation

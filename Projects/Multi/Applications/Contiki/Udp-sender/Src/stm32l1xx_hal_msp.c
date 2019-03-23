@@ -389,6 +389,7 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef *hi2c)
     
   /* I2C RX GPIO pin configuration  */
   GPIO_InitStruct.Pin       = I2Cx_SDA_PIN;
+  
   GPIO_InitStruct.Alternate = I2Cx_SCL_SDA_AF;
   HAL_GPIO_Init(I2Cx_SDA_GPIO_PORT, &GPIO_InitStruct);
     
