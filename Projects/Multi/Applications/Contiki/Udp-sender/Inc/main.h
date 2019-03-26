@@ -144,7 +144,7 @@ struct sensor_pkt
 void Sent_Testing_Data(void);
 void I2C_Sensor_Write(void);
 void I2C_Sensor_Query(void);
-
+void I2C_Sensor_Read(void);
 #ifdef __cplusplus
 }
 #endif

@@ -213,7 +213,7 @@ typedef struct
     uint8_t sensor_type;
     uint8_t sensor_data_len;
     uint8_t battery;
-    uint8_t sensor_data[5];
+    uint8_t sensor_data[4];
     
 }sensor_pkt;
 
@@ -241,7 +241,8 @@ static uint8_t received_counter=0;
 static uint8_t sensor_triggered=0;
 struct sensor_pkt  pkt;
 int BootUp=1;
-//static int i2c_counter=0;
+
+ //static int i2c_counter=0;
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
 PROCESS(data_receiver_process,"data from server process");
@@ -463,7 +464,11 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
 {
   /* Toggle LED2: Transfer in reception process is correct */
   //BSP_LED_Toggle(LED2);
+#if 0
   RxCounter++;
+  
+   
+  
 #if 0  
   if(RxCounter==4)
   {
@@ -498,9 +503,67 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
      RxCounter=0;
      sensor_triggered=1; 
   }
-
+#endif
 }
 
+
+/*****************************************************************
+Function: I2C_Sensor_Read
+Desription: Read command from sensor.
+
+comment: function header define in main.h
+
+******************************************************************/
+void I2C_Sensor_Read(void)
+{
+	
+	HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);
+	
+	while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  } 		
+	
+	  //RxCounter++;
+	
+	//////////////////////////////////////////////////////////////////
+	  //RxCounter++;
+	
+    //if(RxCounter==1)
+    //{
+      
+      
+    //  HAL_I2C_Slave_Receive_IT(&I2cHandle, (uint8_t*)aRxBuffer,6);
+
+    //  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+    //  {
+    //  } 			
+     
+    //}    
+    //else if(RxCounter==2)
+    //{  
+      
+      HAL_I2C_Slave_Receive_IT(&I2cHandle, (uint8_t*)aRxBuffer2,4);
+			
+			while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+      {
+      } 
+  
+    //}
+		//else if(RxCounter==3)
+    //{
+     
+      HAL_I2C_Slave_Receive_IT(&I2cHandle, (uint8_t*)aRxBuffer3,5);
+			
+			while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+      {
+      } 
+				
+    // RxCounter=0;
+     sensor_triggered=1; //bootup flag
+	  //}		
+  ////////////////////////////////////////////////////////////////
+	
+}	
 
 /*****************************************************************
 Function: I2C_Sensor_Write
@@ -511,6 +574,94 @@ comment: function header define in main.h
 ******************************************************************/
 void I2C_Sensor_Write(void)
 {
+   int i=0;
+   
+   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET ); 
+	 HAL_Delay(10);
+	
+
+ /*##-2- Put I2C peripheral in reception process ###########################*/  
+ // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
+for(i=0;i<6;i++)
+{
+  if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i], 1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1,100) != HAL_OK)  
+  {
+    /* Transfer error in reception process */
+    Error_Handler();
+  }
+
+  /*##-3- Wait for the end of the transfer ###################################*/  
+  /*  Before starting a new communication transfer, you need to check the current   
+      state of the peripheral; if it’s busy you need to wait for the end of current
+      transfer before starting a new one.
+      For simplicity reasons, this example is just waiting till the end of the
+      transfer, but application may perform other tasks while transfer operation
+      is ongoing. */
+
+  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  }
+  
+}  
+
+//jas add
+HAL_Delay(1); 
+
+for(i=0;i<4;i++)
+{    
+ /*##-2- Put I2C peripheral in reception process ###########################*/  
+  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+  {
+    /* Transfer error in reception process */
+    Error_Handler();
+  }
+  
+  /*##-3- Wait for the end of the transfer ###################################*/  
+  /*  Before starting a new communication transfer, you need to check the current   
+      state of the peripheral; if it’s busy you need to wait for the end of current
+      transfer before starting a new one.
+      For simplicity reasons, this example is just waiting till the end of the
+      transfer, but application may perform other tasks while transfer operation
+      is ongoing. */
+
+  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  }
+}
+ 
+for(i=0;i<5;i++)
+{   
+ /*##-2- Put I2C peripheral in reception process ###########################*/  
+  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+  {
+    /* Transfer error in reception process */
+    Error_Handler();
+  }
+  
+  /*##-3- Wait for the end of the transfer ###################################*/  
+  /*  Before starting a new communication transfer, you need to check the current   
+      state of the peripheral; if it’s busy you need to wait for the end of current
+      transfer before starting a new one.
+      For simplicity reasons, this example is just waiting till the end of the
+      transfer, but application may perform other tasks while transfer operation
+      is ongoing. */
+
+  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  }
+  
+}
+
+//jas add
+HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);  
+  
+#if 0 
   int i=0;
    
   //jas mark
@@ -614,7 +765,7 @@ HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
 
 //HAL_Delay(10);
 
-    
+ #endif   
 }  
 
 
@@ -627,7 +778,14 @@ comment: function header define in main.h
 ******************************************************************/
 void I2C_Sensor_Query(void)
 {
-   int i=0;
+ 
+  I2C_Sensor_Write();
+  
+	I2C_Sensor_Read();
+    
+  
+#if 0
+  int i=0;
    // I2C_Sensor_Write();
 	
 	  //I2C_Sensor_Write();
@@ -732,7 +890,7 @@ HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
     HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
   
     RxCounter++;
-
+#endif
 }  
 
 
@@ -847,8 +1005,8 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
              //for(i=0;i<5;i++)
              //{
               // pkt.sensor_data1=aRxBuffer3[1];
-             
-               memcpy(&pkt.sensor_data,(const void *)aRxBuffer3,5);
+               
+               memcpy(&pkt.sensor_data,(const void *)&aRxBuffer3[1],4);
             // }        
            
            
@@ -859,8 +1017,8 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                 // send sensor report data here
                 BSP_LED_Toggle(LED_GREEN);
                 //sprintf(&buf[3], "Message %lu",  message_number);
-                simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);// strlen(buf),addr);
-                printf("send a alarm & data len:%d\r\n",sizeof(pkt));
+                simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt)+4,addr);// strlen(buf),addr);
+                printf("send a alarm & data len:%d\r\n",sizeof(pkt)+4);
                 //message_number++;LED_ALARM
                 sensor_triggered=0;
             }
