@@ -63,6 +63,7 @@ int sender_check_connection(); //implemented in unicast-sender.c
 #endif /*MCU_LOW_POWER && RADIO_USES_CONTIKIMAC*/
 /*----------------------------------------------------------------------------*/
 extern UART_HandleTypeDef UartHandle;
+
 /*----------------------------------------------------------------------------*/
 #if LP_PERIPHERAL_IN_SLEEP
 int from_sleep = 0;
@@ -117,6 +118,10 @@ int main()
  // RTC_TimeStampConfig();
   _print_fw_info();
   
+  
+  
+  
+  
   Stack_6LoWPAN_Init();
   
   //Jas add
@@ -125,7 +130,9 @@ int main()
 	
 	
   I2C_Sensor_Query();
+  
 	
+  
 	//Jas add
 	//while(1) {
 	//	
