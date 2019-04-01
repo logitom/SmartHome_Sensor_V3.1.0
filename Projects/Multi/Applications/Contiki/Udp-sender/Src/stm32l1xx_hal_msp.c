@@ -60,6 +60,7 @@ volatile uint32_t Usart_BaudRate = 115200;//previously 115200
 //TIM_OC_InitTypeDef sConfigOC;
 TIM_HandleTypeDef htim3;
 UART_HandleTypeDef UartHandle;
+
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
