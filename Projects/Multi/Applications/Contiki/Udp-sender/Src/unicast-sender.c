@@ -81,6 +81,11 @@
 #define CMD_LED_OFF 0x07
 
 #define CMD_DISABLE_ALARM_ACK 0x5b
+
+#define I2C_SENSOR_PACKET1 0x06
+#define I2C_SENSOR_PACKET2 0x04 
+#define I2C_SENSOR_PACKET3 0x05 
+#define I2C_DATA_LEN 0x04
 /*---------------------------------------------------------------------------*/
 #define APP_DUTY_CYCLE_SLOT  3
 /*---------------------------------------------------------------------------*/
@@ -140,22 +145,6 @@ static const char *duty_cycle_name[DUTY_CYCLE_NB] =
 		, "PROBING"
 #endif /*!RADIO_USES_CONTIKIMAC*/
 };
-#if 0
-struct sensor_data
-{
-    uint8_t index;
-    uint8_t sensor_status;
-    uint8_t sensor_type;  
-}  
-
-struct sensor
-{
-    uint8_t cmd,
-    uint8_t device_type,
-    bool    alarm_status,
-    sensor_data   *sensor //this is for testing. should be void *    
-}
-#endif
 
 
 
@@ -213,10 +202,13 @@ typedef struct
     uint8_t sensor_type;
     uint8_t sensor_data_len;
     uint8_t battery;
-    uint8_t sensor_data[20];
+    uint8_t total_sensor;
+    uint8_t data[16];
     
 }sensor_pkt;
 
+
+uint8_t sensor_data[16];
 
 struct pkt_data{
 uint8_t valid_bit;
@@ -228,11 +220,12 @@ uint16_t datalen;
 struct pkt_data data_buffer[1];
 sensor_pkt *spkt; 
 
+
 /* Buffer used for I2C reception  */
-volatile uint8_t aRxBuffer[6]={0,0,0,0,0,0};
-volatile uint8_t aRxBuffer2[4]={0,0,0,0};
-volatile uint8_t aRxBuffer3[5]={0,0,0,0,0};
-volatile uint8_t aRxBuffer4[50]={0,0,0,0,0};
+uint8_t aRxBuffer[6]={0,0,0,0,0,0};
+uint8_t aRxBuffer2[4]={0,0,0,0};
+uint8_t aRxBuffer3[5]={0,0,0,0,0};
+//volatile uint8_t aRxBuffer4[50]={0,0,0,0,0};
 volatile uint8_t RxCounter=0;
 
  uint8_t aTxBuffer[6]={0x00,0xAE,0x8C,0x07,0x20,0x01};
@@ -240,11 +233,14 @@ volatile uint8_t RxCounter=0;
  uint8_t aTxBuffer3[5]={0x08,0x55,0xAA,0x55,0xAA};
 static uint8_t received_counter=0;
 static uint8_t sensor_triggered=0;
-struct sensor_pkt  pkt;
+sensor_pkt  pkt;
+
+ 
 int BootUp=1;
 
 int total_sensor=0; 
-int sensor_index=0;  
+int sensor_index=0; 
+
  //static int i2c_counter=0;
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
@@ -469,37 +465,45 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
   //BSP_LED_Toggle(LED2);
 
 
-if(RxCounter==6)  
+if(RxCounter==I2C_SENSOR_PACKET1)  
 {
-      while (HAL_I2C_GetState(I2cHandle) != HAL_I2C_STATE_READY)
+      while(HAL_I2C_GetState(I2cHandle) != HAL_I2C_STATE_READY)
       {
       }
       total_sensor=aRxBuffer[5];
-      HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,4);  
-      RxCounter=4;
-}else if(RxCounter==4)
+      HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2);  
+      RxCounter=I2C_SENSOR_PACKET2;
+}else if(RxCounter==I2C_SENSOR_PACKET2)
 {
       while (HAL_I2C_GetState(I2cHandle) != HAL_I2C_STATE_READY)
       {
       } 
-    HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer3,5);
-    RxCounter=5;
-    sensor_index++;      
-}else if(RxCounter==5)
+    HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer3,I2C_SENSOR_PACKET3);
+    RxCounter=I2C_SENSOR_PACKET3;
+    //sensor_index++;      
+}else if(RxCounter==I2C_SENSOR_PACKET3)
 {
-      while (HAL_I2C_GetState(I2cHandle) != HAL_I2C_STATE_READY)
-      {
-      }    
+    while (HAL_I2C_GetState(I2cHandle) != HAL_I2C_STATE_READY)
+    {
+    }    
+    
+    memcpy(&sensor_data[sensor_index*4],&aRxBuffer3[1],I2C_SENSOR_PACKET2); 
+    sensor_index++;   
+    
     if(sensor_index<total_sensor)
     {
+       
+        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2); 
+        RxCounter=I2C_SENSOR_PACKET2;
       
-        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,4); 
-        RxCounter=4;
     }else
     {
-        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer,6); 
-        RxCounter=6;    
+        
+        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1); 
+        RxCounter=I2C_SENSOR_PACKET1;    
         sensor_index=0;
+        process_post(&unicast_sender_process,EVENT_TEST,NULL);  
+        // send a event to report thread.
     }      
 }
 
@@ -1111,25 +1115,12 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
      
       if(sensor_triggered ==1 || ev==EVENT_TEST)
       {
-          
-                    
-             if(aRxBuffer2[1]==0x03|| ev==EVENT_TEST) 
-             { 
-                 if(BootUp==1)
-                 {
-                     BootUp=0;    
-                 }else
-                 {                  
-                     HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
-                 }
-                 
-                 BSP_LED_On(LED_ALARM);
-             }
-     
-               
+                        
              if(aRxBuffer[0]==0x01)
              {
                  pkt.cmd=3;
+                 HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+                 BSP_LED_On(LED_ALARM);
              }
              else if(aRxBuffer[0]==0x00)
              {
@@ -1143,18 +1134,20 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
              pkt.index=1;
         
              pkt.sensor_type=aRxBuffer2[0];
-              
-            
-             
              pkt.status=aRxBuffer2[2];
+             pkt.total_sensor=total_sensor;          
+             
+             for(i=0;i<total_sensor*I2C_DATA_LEN;i++)
+             pkt.data[i]=sensor_data[i];
+             //data 
              
              //for(i=0;i<5;i++)
              //{
               // pkt.sensor_data1=aRxBuffer3[1];
                
-               memcpy(&pkt.sensor_data,(const void *)&aRxBuffer3[1],4);
+              // memcpy(&pkt.sensor_data,(const void *)&aRxBuffer3[1],4);
             // }        
-           
+             
            
              pkt.battery=50;
        
