@@ -190,6 +190,7 @@ enum {
   EVENT_COMMAND=0x01,
   EVENT_TEST=0x02,
   EVENT_ALARM=0x03,
+  EVENT_REPORT=0x04,
 };
 
 typedef struct 
@@ -203,12 +204,12 @@ typedef struct
     uint8_t sensor_data_len;
     uint8_t battery;
     uint8_t total_sensor;
-    uint8_t data[16];
+    uint8_t sensor_data[4][4];
     
 }sensor_pkt;
 
 
-uint8_t sensor_data[16];
+uint8_t sensor_data[4][4];
 
 struct pkt_data{
 uint8_t valid_bit;
@@ -240,7 +241,7 @@ int BootUp=1;
 
 int total_sensor=0; 
 int sensor_index=0; 
-
+static int tmp_humidity_counter=0;
  //static int i2c_counter=0;
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
@@ -487,7 +488,7 @@ if(RxCounter==I2C_SENSOR_PACKET1)
     {
     }    
     
-    memcpy(&sensor_data[sensor_index*4],&aRxBuffer3[1],I2C_SENSOR_PACKET2); 
+    memcpy(&sensor_data[sensor_index][0],&aRxBuffer3[1],I2C_SENSOR_PACKET2); 
     sensor_index++;   
     
     if(sensor_index<total_sensor)
@@ -502,7 +503,7 @@ if(RxCounter==I2C_SENSOR_PACKET1)
         HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1); 
         RxCounter=I2C_SENSOR_PACKET1;    
         sensor_index=0;
-        process_post(&unicast_sender_process,EVENT_TEST,NULL);  
+        process_post(&unicast_sender_process,EVENT_REPORT,NULL);  
         // send a event to report thread.
     }      
 }
@@ -1050,7 +1051,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
 
 
   int i=0;
- 
+  int j=0;
   static struct etimer periodic_timer;  
     
   etimer_set(&periodic_timer, LOOP_INTERVAL);
@@ -1084,7 +1085,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   printf("unicast_sender_process \r\n");
   while(1) {
     PROCESS_WAIT_EVENT();
-    if(ev==PROCESS_EVENT_TIMER || ev==EVENT_TEST){
+    if(ev==PROCESS_EVENT_TIMER || ev==EVENT_TEST || ev==EVENT_REPORT){
    // if(ev==PROCESS_EVENT_TIMER && data==&periodic_timer){  
 #if MCU_LOW_POWER
     	if (from_stop
@@ -1113,10 +1114,11 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
      // probe sensor function 
       
      
-      if(sensor_triggered ==1 || ev==EVENT_TEST)
+      if(sensor_triggered ==1 || ev==EVENT_TEST||ev==EVENT_REPORT)
       {
-                        
-             if(aRxBuffer[0]==0x01)
+             
+                      
+             if(aRxBuffer[0]==0x01||ev==EVENT_TEST)
              {
                  pkt.cmd=3;
                  HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
@@ -1132,13 +1134,20 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
              pkt.device_type=0x03;//node
              pkt.alarm_status=aRxBuffer2[1]; // 1: alarm was triggered
              pkt.index=1;
-        
+             
              pkt.sensor_type=aRxBuffer2[0];
+             
+             if( pkt.sensor_type==0x0c)
+             {
+               tmp_humidity_counter++;   
+             }
+             
              pkt.status=aRxBuffer2[2];
              pkt.total_sensor=total_sensor;          
              
-             for(i=0;i<total_sensor*I2C_DATA_LEN;i++)
-             pkt.data[i]=sensor_data[i];
+             for(i=0;i<total_sensor;i++)
+             for(j=0;j<I2C_DATA_LEN;j++)
+             pkt.sensor_data[i][j]=sensor_data[i][j];
              //data 
              
              //for(i=0;i<5;i++)
@@ -1156,8 +1165,15 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                 // send sensor report data here
                 BSP_LED_Toggle(LED_GREEN);
                 //sprintf(&buf[3], "Message %lu",  message_number);
-                simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);// strlen(buf),addr);
-                printf("send a alarm & data len:%d\r\n",sizeof(pkt));
+                if( pkt.sensor_type==0x0c &&tmp_humidity_counter%5==0)
+                {
+                  simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);
+                  tmp_humidity_counter=0;
+                }else if( pkt.sensor_type!=0x0c)
+                {
+                     simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);// strlen(buf),addr);
+                } 
+                 
                 //message_number++;LED_ALARM
                 sensor_triggered=0;
             }
