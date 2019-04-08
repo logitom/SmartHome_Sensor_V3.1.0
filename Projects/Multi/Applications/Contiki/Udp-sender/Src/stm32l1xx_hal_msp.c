@@ -60,7 +60,7 @@ volatile uint32_t Usart_BaudRate = 115200;//previously 115200
 //TIM_OC_InitTypeDef sConfigOC;
 TIM_HandleTypeDef htim3;
 UART_HandleTypeDef UartHandle;
-
+extern DMA_HandleTypeDef hdma_adc;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -578,8 +578,77 @@ void BUZZERConfig(void)
 
 
 
+void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
+{
 
- 
+  GPIO_InitTypeDef GPIO_InitStruct;
+  if(hadc->Instance==ADC1)
+  {
+  /* USER CODE BEGIN ADC1_MspInit 0 */
+
+  /* USER CODE END ADC1_MspInit 0 */
+    /* Peripheral clock enable */
+    __HAL_RCC_ADC1_CLK_ENABLE();
+  
+    /**ADC GPIO Configuration    
+    PC2     ------> ADC_IN12 
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_2;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+
+     /* ADC1 DMA Init */
+    /* ADC Init */
+    hdma_adc.Instance = DMA1_Channel1;
+    hdma_adc.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_adc.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_adc.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_adc.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    hdma_adc.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    hdma_adc.Init.Mode = DMA_NORMAL;
+    hdma_adc.Init.Priority = DMA_PRIORITY_LOW;
+    if (HAL_DMA_Init(&hdma_adc) != HAL_OK)
+    {
+      ;//_Error_Handler(__FILE__, __LINE__);
+    }
+
+    __HAL_LINKDMA(hadc,DMA_Handle,hdma_adc);    
+  /* USER CODE BEGIN ADC1_MspInit 1 */
+
+  /* USER CODE END ADC1_MspInit 1 */
+  }
+
+}
+
+
+void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
+{
+
+  if(hadc->Instance==ADC1)
+  {
+  /* USER CODE BEGIN ADC1_MspDeInit 0 */
+
+  /* USER CODE END ADC1_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_ADC1_CLK_DISABLE();
+  
+    /**ADC GPIO Configuration    
+    PC2     ------> ADC_IN12 
+    */
+    HAL_GPIO_DeInit(GPIOC, GPIO_PIN_2);
+
+        /* ADC1 DMA DeInit */
+    HAL_DMA_DeInit(hadc->DMA_Handle); 
+  /* USER CODE BEGIN ADC1_MspDeInit 1 */
+
+  /* USER CODE END ADC1_MspDeInit 1 */
+  }
+
+}
+
+
  
 void Buzzer_On(void)
 {

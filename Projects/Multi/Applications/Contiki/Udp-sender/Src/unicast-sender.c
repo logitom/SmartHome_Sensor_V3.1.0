@@ -242,12 +242,21 @@ int BootUp=1;
 int total_sensor=0; 
 int sensor_index=0; 
 static int tmp_humidity_counter=0;
+
+/* for battery monitoring */ 
+extern ADC_HandleTypeDef hadc;
+//extern DMA_HandleTypeDef hdma_adc; 
+uint32_t BatValue=0; 
+extern uint32_t adcValue; 
+/* for battery monitoring */ 
+
  //static int i2c_counter=0;
 /*---------------------------------------------------------------------------*/
 PROCESS(unicast_sender_process, "Unicast sender example process");
 PROCESS(data_receiver_process,"data from server process");
+PROCESS(battery_process,"battery monitoring process");
 //PROCESS(watchdog_process, "watchdog process");
-AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process);//,&watchdog_process);
+AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process,&battery_process);//,&watchdog_process);
 
 
 /*---------------------------------------------------------------------------*/
@@ -472,14 +481,16 @@ if(RxCounter==I2C_SENSOR_PACKET1)
       {
       }
       total_sensor=aRxBuffer[5];
-      HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2);  
+     // HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2);
+      HAL_I2C_Slave_Receive_IT(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2);        
       RxCounter=I2C_SENSOR_PACKET2;
 }else if(RxCounter==I2C_SENSOR_PACKET2)
 {
       while (HAL_I2C_GetState(I2cHandle) != HAL_I2C_STATE_READY)
       {
       } 
-    HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer3,I2C_SENSOR_PACKET3);
+   //HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer3,I2C_SENSOR_PACKET3);
+    HAL_I2C_Slave_Receive_IT(I2cHandle,(uint8_t*)aRxBuffer3,I2C_SENSOR_PACKET3);  
     RxCounter=I2C_SENSOR_PACKET3;
     //sensor_index++;      
 }else if(RxCounter==I2C_SENSOR_PACKET3)
@@ -494,13 +505,15 @@ if(RxCounter==I2C_SENSOR_PACKET1)
     if(sensor_index<total_sensor)
     {
        
-        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2); 
+        //HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2); 
+         HAL_I2C_Slave_Receive_IT(I2cHandle,(uint8_t*)aRxBuffer2,I2C_SENSOR_PACKET2); 
         RxCounter=I2C_SENSOR_PACKET2;
       
     }else
     {
         
-        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1); 
+        //HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1); 
+        HAL_I2C_Slave_Receive_IT(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1); 
         RxCounter=I2C_SENSOR_PACKET1;    
         sensor_index=0;
         process_post(&unicast_sender_process,EVENT_REPORT,NULL);  
@@ -588,7 +601,7 @@ void I2C_Sensor_Write(void)
  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
 for(i=0;i<6;i++)
 {
-  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
+  if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
   //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i], 1) != HAL_OK)
   //if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1,100) != HAL_OK)  
   {
@@ -617,7 +630,7 @@ for(i=0;i<4;i++)
 {    
  /*##-2- Put I2C peripheral in reception process ###########################*/  
   // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
-	if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
   //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
   {
     /* Transfer error in reception process */
@@ -641,7 +654,7 @@ for(i=0;i<5;i++)
 {   
  /*##-2- Put I2C peripheral in reception process ###########################*/  
   // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
-	if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
   //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
   {
     /* Transfer error in reception process */
@@ -667,8 +680,9 @@ HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
 
 
 
-  HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
-	
+  //HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
+  HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);	
+
 	while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
   {
   } 		
@@ -692,7 +706,7 @@ HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
     //else if(RxCounter==2)
     //{  
       
-      HAL_I2C_Slave_Receive_DMA(&I2cHandle, (uint8_t*)aRxBuffer2,4);
+      HAL_I2C_Slave_Receive_IT(&I2cHandle, (uint8_t*)aRxBuffer2,4);
 			
 			while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
       {
@@ -702,7 +716,7 @@ HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
 		//else if(RxCounter==3)
     //{
      
-      HAL_I2C_Slave_Receive_DMA(&I2cHandle, (uint8_t*)aRxBuffer3,5);
+      HAL_I2C_Slave_Receive_IT(&I2cHandle, (uint8_t*)aRxBuffer3,5);
 			
 			while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
       {
@@ -845,9 +859,9 @@ void I2C_Sensor_Query(void)
  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
 for(i=0;i<6;i++)
 {
-  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
   //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i], 1) != HAL_OK)
-  //if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1,100) != HAL_OK)  
+  if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)  
   {
     /* Transfer error in reception process */
     Error_Handler();
@@ -874,7 +888,7 @@ for(i=0;i<4;i++)
 {    
  /*##-2- Put I2C peripheral in reception process ###########################*/  
   // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
-	if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
   //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
   {
     /* Transfer error in reception process */
@@ -898,7 +912,7 @@ for(i=0;i<5;i++)
 {   
  /*##-2- Put I2C peripheral in reception process ###########################*/  
   // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
-	if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
   //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
   {
     /* Transfer error in reception process */
@@ -924,10 +938,10 @@ for(i=0;i<5;i++)
 
 
 
-  HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
-	
+  //HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
+	HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);
 	  
-  RxCounter=6;;
+  RxCounter=6;
 	//I2C_Sensor_Read();
 
   //dma code
@@ -1158,7 +1172,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
             // }        
              
            
-             pkt.battery=50;
+             pkt.battery=BatValue;
        
             if(unicast_connection.udp_conn!=NULL)      
             {
@@ -1319,6 +1333,56 @@ PROCESS_THREAD(watchdog_process, ev, data)
            the HAL_WWDG_EarlyWakeupCallback could be implemented in the user file
    */
 }
+
+
+
+/*---------------------------------------------------------------------------*/
+PROCESS_THREAD(battery_process, ev, data)
+{
+
+  static struct etimer battery_timer;  
+    
+  etimer_set(&battery_timer, LOOP_INTERVAL*10);
+  PROCESS_BEGIN();   
+ 
+  while(1)
+  {
+      PROCESS_WAIT_EVENT(); 
+      if(ev==PROCESS_EVENT_TIMER)
+      {
+         adcValue=HAL_ADC_GetValue(&hadc);
+         adcValue=adcValue-2482;
+         BatValue=(adcValue*100)/1241;//battery Reference Voltage: 3V,ADC Reference Volgate: 3.6V
+         if(BatValue>100&& BatValue <130)
+         {
+             BatValue=100;
+         }else if(BatValue>130)
+         {
+             BatValue=0;
+         }
+         
+         
+      }    
+      etimer_restart(&battery_timer); 
+  }
+  PROCESS_END();  
+  
+  
+}
+
+
+/* USER CODE BEGIN 4 */
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+{
+  //volatile int i;
+ // adcValue=HAL_ADC_GetValue(hadc);
+ // BatValue=(adcValue*100)/4096;
+ // HAL_ADC_Start_DMA(hadc,&adcValue,1);   
+  //printf("adc Value:%d\r\n",adcValue);
+ 
+  
+}  
+
 
 
 /**

@@ -57,6 +57,8 @@ I2C_HandleTypeDef I2cHandle;
 
 RTC_HandleTypeDef RtcHandle;
 
+extern ADC_HandleTypeDef hadc;
+
 extern uint8_t RxCounter;
 extern uint8_t aRxBuffer[6];
 /**
@@ -265,12 +267,12 @@ void MX_GPIO_Init(void)
   __HAL_RCC_TIM2_CLK_ENABLE();
   __HAL_RCC_TIM3_CLK_ENABLE();
   __HAL_RCC_TIM5_CLK_ENABLE();
-  
+ // __HAL_RCC_DMA1_CLK_ENABLE();
  // __HAL_RCC_GPIOB_CLK_ENABLE();
  // __HAL_RCC_I2C1_CLK_ENABLE();
   __TIM2_CLK_ENABLE();
   __TIM3_CLK_ENABLE();
-  __HAL_RCC_WWDG_CLK_ENABLE();
+ // __HAL_RCC_WWDG_CLK_ENABLE();
  
     /*Configure GPIO pin : PC3 */
   GPIO_InitStruct.Pin = GPIO_PIN_3;
@@ -340,6 +342,67 @@ void Error_Handler(void)
   }
 }
 
+/***********************************************
+Descrpition: for battery electricity monitoring.
+
+Pin: PC12
+***********************************************/
+void MX_ADC_Init(void)
+{
+
+  ADC_ChannelConfTypeDef sConfig;
+
+    /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
+    */
+  hadc.Instance = ADC1;
+  hadc.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
+  hadc.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc.Init.EOCSelection = ADC_EOC_SEQ_CONV;
+  hadc.Init.LowPowerAutoWait = ADC_AUTOWAIT_DISABLE;
+  hadc.Init.LowPowerAutoPowerOff = ADC_AUTOPOWEROFF_DISABLE;
+  hadc.Init.ChannelsBank = ADC_CHANNELS_BANK_A;
+  hadc.Init.ContinuousConvMode = ENABLE;
+  hadc.Init.NbrOfConversion = 1;
+  hadc.Init.DiscontinuousConvMode = DISABLE;
+  hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc.Init.DMAContinuousRequests = DISABLE;
+  if (HAL_ADC_Init(&hadc) != HAL_OK)
+  {
+    ;//_Error_Handler(__FILE__, __LINE__);
+  }
+
+    /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
+    */
+  sConfig.Channel = ADC_CHANNEL_12;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_4CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    ;//_Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+
+void MX_DMA_Init(void) 
+{
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+
+}
+
+/*
+Description: MX_I2C_Init header defines in cube_hal.h
+
+*/
 void MX_I2C_Init(void)
 {
     /*##-1- Configure the I2C peripheral ######################################*/

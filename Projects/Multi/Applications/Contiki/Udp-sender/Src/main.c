@@ -63,7 +63,10 @@ int sender_check_connection(); //implemented in unicast-sender.c
 #endif /*MCU_LOW_POWER && RADIO_USES_CONTIKIMAC*/
 /*----------------------------------------------------------------------------*/
 extern UART_HandleTypeDef UartHandle;
-
+ADC_HandleTypeDef hadc;
+DMA_HandleTypeDef hdma_adc; 
+uint32_t adcValue;
+extern uint32_t BatValue; 
 /*----------------------------------------------------------------------------*/
 #if LP_PERIPHERAL_IN_SLEEP
 int from_sleep = 0;
@@ -91,9 +94,17 @@ int main()
   BUZZERConfig();
   
   MX_MCU_Init();
+  
   /* 8-bit mcu I2C */ 
   MX_I2C_Init();
   
+ // MX_DMA_Init(); 
+  
+  MX_ADC_Init();
+  
+  //HAL_ADC_Start_IT(&hadc);
+  HAL_ADC_Start(&hadc);
+  //HAL_ADC_Start_DMA(&hadc, (uint32_t*)&adcValue,1);
   
 #if MCU_LOW_POWER
   if (USER_CLOCK_FREQUENCY != DEFAULT_CLOCK_FREQUENCY) {
@@ -146,6 +157,9 @@ int main()
     do {
       r = process_run();
       // add watch dog timer here
+     //adcValue=HAL_ADC_GetValue(&hadc);
+     //BatValue=(adcValue*100)/4096;
+      
       
     } while(r > 0);
 #if MCU_LOW_POWER
