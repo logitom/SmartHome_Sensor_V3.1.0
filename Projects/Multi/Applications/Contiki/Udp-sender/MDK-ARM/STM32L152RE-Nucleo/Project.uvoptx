@@ -461,34 +461,18 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>159</LineNumber>
+          <LineNumber>835</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134272500</Address>
+          <Address>134235608</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../../Src/main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\udp_sender_l152\../../Src/main.c\159</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>1337</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
           <Filename>../../Src/unicast-sender.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\udp_sender_l152\../../Src/unicast-sender.c\835</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -576,6 +560,26 @@
           <count>16</count>
           <WinNumber>1</WinNumber>
           <ItemText>adcValue</ItemText>
+        </Ww>
+        <Ww>
+          <count>17</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>aTxBuffer</ItemText>
+        </Ww>
+        <Ww>
+          <count>18</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>aTxBuffer2</ItemText>
+        </Ww>
+        <Ww>
+          <count>19</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>aTxBuffer3</ItemText>
+        </Ww>
+        <Ww>
+          <count>20</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>spkt</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
