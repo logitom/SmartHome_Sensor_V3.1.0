@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SPIRIT1_STM32L152RE_Nucleo\Exe\udp-sender_l152.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SPIRIT1_STM32L152RE_Nucleo\Exe\udp-sender_l152.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Sat Apr 13 15:37:51 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Apr 17 14:32:19 2019
 <BR><P>
 <H3>Maximum Stack Usage =        488 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -772,7 +772,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_data_receiver_process
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiver
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_data_receiver_process
 </UL>
 
 <P><STRONG><a name="[b3]"></a>BSP_LED_On</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32l1xx_nucleo.o(i.BSP_LED_On))
@@ -1148,7 +1149,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
 </UL>
 
-<P><STRONG><a name="[e5]"></a>HAL_I2C_SlaveRxCpltCallback</STRONG> (Thumb, 212 bytes, Stack size 8 bytes, unicast-sender.o(i.HAL_I2C_SlaveRxCpltCallback))
+<P><STRONG><a name="[e5]"></a>HAL_I2C_SlaveRxCpltCallback</STRONG> (Thumb, 236 bytes, Stack size 8 bytes, unicast-sender.o(i.HAL_I2C_SlaveRxCpltCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = HAL_I2C_SlaveRxCpltCallback &rArr; HAL_I2C_Slave_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Slave_Receive_DMA
@@ -1464,7 +1465,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_data_receiver_process
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiver
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_data_receiver_process
 </UL>
 
 <P><STRONG><a name="[10f]"></a>HAL_UART_Init</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, stm32l1xx_hal_uart.o(i.HAL_UART_Init))
@@ -1539,7 +1541,8 @@ Global Symbols
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_GetState
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_data_receiver_process
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiver
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_data_receiver_process
 </UL>
 
 <P><STRONG><a name="[121]"></a>MX_ADC_Init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, cube_hal_l1.o(i.MX_ADC_Init))
@@ -1807,7 +1810,7 @@ Global Symbols
 <P><STRONG><a name="[1e]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l1xx_it.o(i.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32l152xe.o(RESET)
 </UL>
-<P><STRONG><a name="[c7]"></a>Sent_Testing_Data</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, unicast-sender.o(i.Sent_Testing_Data))
+<P><STRONG><a name="[c7]"></a>Sent_Testing_Data</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, unicast-sender.o(i.Sent_Testing_Data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Sent_Testing_Data &rArr; process_post
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_post
@@ -3425,7 +3428,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = process_post
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sent_Testing_Data
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiver
 <LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_etimer_process
 </UL>
 
@@ -4279,7 +4281,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_udp_packet_sendto
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_unicast_sender_process
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receiver
+<LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_unicast_sender_process
 <LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_thread_data_receiver_process
 </UL>
 
@@ -6494,7 +6497,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> unicast-sender.o(.data)
 </UL>
-<P><STRONG><a name="[12]"></a>process_thread_unicast_sender_process</STRONG> (Thumb, 516 bytes, Stack size 32 bytes, unicast-sender.o(i.process_thread_unicast_sender_process))
+<P><STRONG><a name="[12]"></a>process_thread_unicast_sender_process</STRONG> (Thumb, 528 bytes, Stack size 32 bytes, unicast-sender.o(i.process_thread_unicast_sender_process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 380<LI>Call Chain = process_thread_unicast_sender_process &rArr; simple_udp_sendto &rArr; uip_udp_packet_sendto &rArr; uip_udp_packet_send &rArr; tcpip_ipv6_output &rArr; rpl_update_header &rArr; insert_hbh_header &rArr; update_hbh_header &rArr; dao_output_target &rArr; dao_output_target_seq &rArr; rpl_get_parent_ipaddr &rArr; uip_ds6_nbr_ipaddr_from_lladdr &rArr; uip_ds6_nbr_ll_lookup &rArr; nbr_table_get_from_lladdr &rArr; index_from_lladdr &rArr; linkaddr_cmp &rArr; memcmp
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;etimer_set
@@ -6512,11 +6515,14 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> unicast-sender.o(.data)
 </UL>
-<P><STRONG><a name="[63]"></a>receiver</STRONG> (Thumb, 90 bytes, Stack size 32 bytes, unicast-sender.o(i.receiver))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = receiver &rArr; uip_debug_ipaddr_print &rArr; __2printf
+<P><STRONG><a name="[63]"></a>receiver</STRONG> (Thumb, 234 bytes, Stack size 32 bytes, unicast-sender.o(i.receiver))
+<BR><BR>[Stack]<UL><LI>Max Depth = 380<LI>Call Chain = receiver &rArr; simple_udp_sendto &rArr; uip_udp_packet_sendto &rArr; uip_udp_packet_send &rArr; tcpip_ipv6_output &rArr; rpl_update_header &rArr; insert_hbh_header &rArr; update_hbh_header &rArr; dao_output_target &rArr; dao_output_target_seq &rArr; rpl_get_parent_ipaddr &rArr; uip_ds6_nbr_ipaddr_from_lladdr &rArr; uip_ds6_nbr_ll_lookup &rArr; nbr_table_get_from_lladdr &rArr; index_from_lladdr &rArr; linkaddr_cmp &rArr; memcmp
 </UL>
 <BR>[Calls]<UL><LI><a href="#[288]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_debug_ipaddr_print
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_post
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop
+<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;simple_udp_sendto
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Off
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Sensor_Write
 <LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>

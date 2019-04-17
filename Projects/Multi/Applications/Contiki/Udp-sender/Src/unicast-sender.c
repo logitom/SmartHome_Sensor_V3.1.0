@@ -69,6 +69,8 @@
 #endif
 
 #define LOOP_INTERVAL		(1 * CLOCK_SECOND)
+#define RESENT_INTERVAL (LOOP_INTERVAL*5)
+
 
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
@@ -290,7 +292,18 @@ void Sent_Testing_Data(void)
      
    }
    i2c_counter++;
-#endif   
+#endif
+ Alarm_Retry_Flag=0; 
+   
+ if(Alarm_Retry_Flag==1)
+ {
+     Sensor_Alarm_Triggered=0;
+ }else
+ {         
+     //if(aRxBuffer2[1]==0x03||aRxBuffer2[1]==0x02||aRxBuffer2[1]==0x08)
+     Sensor_Alarm_Triggered=1;
+ } 
+        
   process_post(&unicast_sender_process,EVENT_TEST,NULL);      
 }  
 /*---------------------------------------------------------------------------*/
@@ -340,8 +353,35 @@ receiver(struct simple_udp_connection *c,
     printf("\r\n datalen:%d\r\n",datalen);
       
   
-    process_post(&data_receiver_process,EVENT_COMMAND,NULL);      
+   // process_post(&data_receiver_process,EVENT_COMMAND,NULL);      
   
+    spkt=(sensor_pkt*)&data_buffer[0].received_data;
+      
+        if(spkt->cmd==CMD_DISABLE_ALARM)
+        {
+            spkt->cmd=CMD_DISABLE_ALARM_ACK;
+            BSP_LED_Off(LED_ALARM);
+            HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
+            simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );
+            printf(" disable command ACK\r\n");
+       
+        }else if(spkt->cmd==CMD_LED_ON || spkt->cmd==CMD_LED_OFF)
+        {
+            aTxBuffer2[1]=spkt->cmd; //led on/off  
+           // printf("received command:%d \r\n",aTxBuffer2[1]);             
+            I2C_Sensor_Write();  
+            // send an LED ack   for resent 
+                     
+            simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );          
+            printf(" sensor  ACK:%d\r\n",spkt->cmd);
+        }else if(spkt->cmd==CMD_ALARM_ACK)
+        {
+          Alarm_Retry_Flag=0;//resent
+          Alarm_Resent_Times=0;
+          printf(" received an alarm ACK:%d\r\n",spkt->cmd); 
+        }
+ 
+    
 }
 #if MCU_LOW_POWER
 /*---------------------------------------------------------------------------*/
@@ -530,7 +570,7 @@ if(RxCounter==I2C_SENSOR_PACKET1)
     }else
     {
         
-        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1); 
+       
         //HAL_I2C_Slave_Receive_IT(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1); 
         RxCounter=I2C_SENSOR_PACKET1;    
         sensor_index=0;
@@ -539,8 +579,10 @@ if(RxCounter==I2C_SENSOR_PACKET1)
             Sensor_Alarm_Triggered=0;
         }else
         {         
+            if(aRxBuffer2[1]==0x03||aRxBuffer2[1]==0x02||aRxBuffer2[1]==0x08)
             Sensor_Alarm_Triggered=1;
-        }       
+        } 
+        HAL_I2C_Slave_Receive_DMA(I2cHandle,(uint8_t*)aRxBuffer,I2C_SENSOR_PACKET1);         
        // alarm_flag=1; resent
        // process_post(&unicast_sender_process,EVENT_REPORT,NULL);  
         // send a event to report thread.
@@ -816,7 +858,7 @@ for(i=0;i<5;i++)
 
   HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
   RxCounter=6;  
-//HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);	
+  //HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);	
  #if 0  // for led
 	while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
   {
@@ -841,7 +883,7 @@ for(i=0;i<5;i++)
     //else if(RxCounter==2)
     //{  
       
-      HAL_I2C_Slave_Receive_DMA(&I2cHandle, (uint8_t*)aRxBuffer2,4);
+      HAL_I2C_Slave_Receive_IT(&I2cHandle, (uint8_t*)aRxBuffer2,4);
 			
 			while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
       {
@@ -851,17 +893,17 @@ for(i=0;i<5;i++)
 		//else if(RxCounter==3)
     //{
      
-      HAL_I2C_Slave_Receive_DMA(&I2cHandle, (uint8_t*)aRxBuffer3,5);
+      HAL_I2C_Slave_Receive_IT(&I2cHandle, (uint8_t*)aRxBuffer3,5);
 			
 			while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
       {
       } 
 				
     // RxCounter=0;
-     sensor_triggered=1; //bootup flag
+    // sensor_triggered=1; //bootup flag
   
  // for ohter nodes
-  HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
+ // HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
 	//HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);
 #endif	  
 
@@ -879,7 +921,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   int j=0;
   static struct etimer periodic_timer;  
     
-  etimer_set(&periodic_timer, LOOP_INTERVAL*2);
+  etimer_set(&periodic_timer, RESENT_INTERVAL);
 
   /*To skip autodetection of the receiver using the servreg service,
  * set SERVREG_HACK_ENABLED to 0 and uncomment one of the specific lines
@@ -943,7 +985,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       {
              
                       
-             if(aRxBuffer[0]==0x01||ev==EVENT_TEST)
+             if(aRxBuffer2[1]==0x03||ev==EVENT_TEST)
              {
                  pkt.cmd=3;
                  HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
@@ -965,10 +1007,27 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                  if(Alarm_Retry_Flag==1)
                    printf("\r\n retry times: %d:\r\n",Alarm_Resent_Times);  
              }
-             else if(aRxBuffer[0]==0x00)
+             else if(aRxBuffer2[1]==0x02||aRxBuffer2[1]==0x08)
              {
                  pkt.cmd=2;
-                   
+              #if 0   
+                 /* if retry mechanism run this code, it will exit. just */
+                 /* retry code should not run this segment*/
+                 if(Alarm_Retry_Flag==1)
+                 {Alarm_Resent_Times++;}
+                 
+                  Alarm_Retry_Flag=1;
+                
+                 if(Alarm_Resent_Times>=ALARM_RETRY_TIMES)
+                 {
+                   Alarm_Retry_Flag=0;  
+                   Alarm_Resent_Times=0;
+                 }  
+                 
+                 if(Alarm_Retry_Flag==1)
+                   printf("\r\n retry times: %d:\r\n",Alarm_Resent_Times); 
+                 /* if retry mechanism run this code, it will exit. just */
+                #endif   
              }             
              printf("\r\n command:%d \r\n",pkt.cmd);              
              
@@ -1011,7 +1070,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                 BSP_LED_Off(LED_GREEN);
                 #endif  
               //sprintf(&buf[3], "Message %lu",  message_number);
-                if( pkt.sensor_type==0x0c &&tmp_humidity_counter%5==0)
+                if( pkt.sensor_type==0x0c &&tmp_humidity_counter%20==0)
                 {
                   simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);
                   tmp_humidity_counter=0;
@@ -1031,7 +1090,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
   
      // printf("Sensor d: %d\n", pkt.sensor_data);       
     //  etimer_reset_with_new_interval(&periodic_timer,rand()%LOOP_INTERVAL);
-      etimer_reset_with_new_interval(&periodic_timer,LOOP_INTERVAL);
+      etimer_reset_with_new_interval(&periodic_timer,RESENT_INTERVAL);
       etimer_restart(&periodic_timer);  
       }
       
