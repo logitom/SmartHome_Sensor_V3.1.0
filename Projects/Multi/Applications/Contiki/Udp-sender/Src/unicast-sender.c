@@ -292,7 +292,7 @@ void Sent_Testing_Data(void)
      
    }
    i2c_counter++;
-#endif
+
  Alarm_Retry_Flag=0; 
    
  if(Alarm_Retry_Flag==1)
@@ -302,8 +302,11 @@ void Sent_Testing_Data(void)
  {         
      //if(aRxBuffer2[1]==0x03||aRxBuffer2[1]==0x02||aRxBuffer2[1]==0x08)
      Sensor_Alarm_Triggered=1;
+     aRxBuffer2[1]==0x03;
  } 
-        
+ #endif
+   // Sensor_Alarm_Triggered=1;
+  //  aRxBuffer2[1]=0x03; 
   process_post(&unicast_sender_process,EVENT_TEST,NULL);      
 }  
 /*---------------------------------------------------------------------------*/
@@ -368,10 +371,18 @@ receiver(struct simple_udp_connection *c,
         }else if(spkt->cmd==CMD_LED_ON || spkt->cmd==CMD_LED_OFF)
         {
             aTxBuffer2[1]=spkt->cmd; //led on/off  
-           // printf("received command:%d \r\n",aTxBuffer2[1]);             
+            printf("LED command:%d \r\n",aTxBuffer2[1]);             
             I2C_Sensor_Write();  
             // send an LED ack   for resent 
-                     
+  #if 0         
+            if(spkt->cmd==CMD_LED_ON)
+            {
+                spkt->cmd=CMD_LED_OFF;        
+            }else if(spkt->cmd==CMD_LED_OFF)
+            {
+                spkt->cmd=CMD_LED_ON;       
+            } 
+  #endif                   
             simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );          
             printf(" sensor  ACK:%d\r\n",spkt->cmd);
         }else if(spkt->cmd==CMD_ALARM_ACK)
@@ -1148,9 +1159,16 @@ PROCESS_THREAD(data_receiver_process, ev, data)
            // printf("received command:%d \r\n",aTxBuffer2[1]);             
             I2C_Sensor_Write();  
             // send an LED ack   for resent 
-                     
+            
+            if(spkt->cmd==CMD_LED_ON)
+            {
+                spkt->cmd=CMD_LED_OFF;        
+            }else if(spkt->cmd==CMD_LED_OFF)
+            {
+                spkt->cmd=CMD_LED_ON;       
+            }
             simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );          
-            printf(" sensor  ACK:%d\r\n",spkt->cmd);
+          printf(" command:%d,sensor  ACK:%d\r\n",pkt.cmd,spkt->cmd);
         }else if(spkt->cmd==CMD_ALARM_ACK)
         {
           Alarm_Retry_Flag=0;//resent

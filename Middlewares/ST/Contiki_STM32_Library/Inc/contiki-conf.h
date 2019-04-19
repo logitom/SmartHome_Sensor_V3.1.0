@@ -99,7 +99,7 @@
 /* radio driver blocks until ACK is received */
 #define NULLRDC_CONF_ACK_WAIT_TIME          (0)
 #define CONTIKIMAC_CONF_BROADCAST_RATE_LIMIT 0
-#define IEEE802154_CONF_PANID       0xABCD
+#define IEEE802154_CONF_PANID       0xcdef //0xABCD
 
 #define AODV_COMPLIANCE
 
