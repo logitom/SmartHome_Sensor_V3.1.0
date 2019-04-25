@@ -93,7 +93,7 @@
 /*---------------------------------------------------------------------------*/
 /* for resent function                                                       */
 /*---------------------------------------------------------------------------*/
-#define ALARM_RETRY_TIMES 5
+#define ALARM_RETRY_TIMES 8
 
 
 /*---------------------------------------------------------------------------*/
@@ -305,9 +305,9 @@ void Sent_Testing_Data(void)
      aRxBuffer2[1]==0x03;
  } 
  #endif
-   // Sensor_Alarm_Triggered=1;
-  //  aRxBuffer2[1]=0x03; 
-  process_post(&unicast_sender_process,EVENT_TEST,NULL);      
+  Alarm_Retry_Flag=1;
+ // aRxBuffer2[1]=0x03; 
+ // process_post(&unicast_sender_process,EVENT_TEST,NULL);      
 }  
 /*---------------------------------------------------------------------------*/
 
@@ -870,7 +870,7 @@ for(i=0;i<5;i++)
   HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
   RxCounter=6;  
   //HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);	
- #if 0  // for led
+ #if 0 // for led
 	while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
   {
   } 		
@@ -996,7 +996,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
       {
              
                       
-             if(aRxBuffer2[1]==0x03||ev==EVENT_TEST)
+             if(aRxBuffer2[1]==0x03||ev==EVENT_TEST||Alarm_Retry_Flag==1)
              {
                  pkt.cmd=3;
                  HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
@@ -1016,31 +1016,9 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                  }  
                  
                  if(Alarm_Retry_Flag==1)
-                   printf("\r\n retry times: %d:\r\n",Alarm_Resent_Times);  
-             }
-             else if(aRxBuffer2[1]==0x02||aRxBuffer2[1]==0x08)
-             {
-                 pkt.cmd=2;
-              #if 0   
-                 /* if retry mechanism run this code, it will exit. just */
-                 /* retry code should not run this segment*/
-                 if(Alarm_Retry_Flag==1)
-                 {Alarm_Resent_Times++;}
+                 printf("\r\n retry times: %d:\r\n",Alarm_Resent_Times); 
                  
-                  Alarm_Retry_Flag=1;
-                
-                 if(Alarm_Resent_Times>=ALARM_RETRY_TIMES)
-                 {
-                   Alarm_Retry_Flag=0;  
-                   Alarm_Resent_Times=0;
-                 }  
-                 
-                 if(Alarm_Retry_Flag==1)
-                   printf("\r\n retry times: %d:\r\n",Alarm_Resent_Times); 
-                 /* if retry mechanism run this code, it will exit. just */
-                #endif   
-             }             
-             printf("\r\n command:%d \r\n",pkt.cmd);              
+                 printf("\r\n command:%d \r\n",pkt.cmd);              
              
              pkt.device_type=0x03;//node
              pkt.alarm_status=aRxBuffer2[1]; // 1: alarm was triggered
@@ -1075,13 +1053,9 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
             {
                 // send sensor report data here
                // BSP_LED_Toggle(LED_GREEN);
-               #if 0 
-                BSP_LED_On(LED_GREEN);
-                Hal_Delay(500);
-                BSP_LED_Off(LED_GREEN);
-                #endif  
+             
               //sprintf(&buf[3], "Message %lu",  message_number);
-                if( pkt.sensor_type==0x0c &&tmp_humidity_counter%20==0)
+                if( pkt.sensor_type==0x0c &&tmp_humidity_counter%5==0)
                 {
                   simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);
                   tmp_humidity_counter=0;
@@ -1092,7 +1066,83 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                  
                 //message_number++;LED_ALARM
                 sensor_triggered=0;
-            }
+            }                 
+                 
+                 
+             }
+             else if(aRxBuffer2[1]==0x02||aRxBuffer2[1]==0x08)
+             {
+                 pkt.cmd=2;
+              #if 0   
+                 /* if retry mechanism run this code, it will exit. just */
+                 /* retry code should not run this segment*/
+                 if(Alarm_Retry_Flag==1)
+                 {Alarm_Resent_Times++;}
+                 
+                  Alarm_Retry_Flag=1;
+                
+                 if(Alarm_Resent_Times>=ALARM_RETRY_TIMES)
+                 {
+                   Alarm_Retry_Flag=0;  
+                   Alarm_Resent_Times=0;
+                 }  
+                 
+                 if(Alarm_Retry_Flag==1)
+                   printf("\r\n retry times: %d:\r\n",Alarm_Resent_Times); 
+                 /* if retry mechanism run this code, it will exit. just */
+                #endif 
+
+                printf("\r\n command:%d \r\n",pkt.cmd);              
+             
+             pkt.device_type=0x03;//node
+             pkt.alarm_status=aRxBuffer2[1]; // 1: alarm was triggered
+             pkt.index=1;
+             
+             pkt.sensor_type=aRxBuffer2[0];
+             
+             if( pkt.sensor_type==0x0c)
+             {
+               tmp_humidity_counter++;   
+             }
+             
+             pkt.status=aRxBuffer2[2];
+             pkt.total_sensor=total_sensor;          
+             
+             for(i=0;i<total_sensor;i++)
+             for(j=0;j<I2C_DATA_LEN;j++)
+             pkt.sensor_data[i][j]=sensor_data[i][j];
+             //data 
+             
+             //for(i=0;i<5;i++)
+             //{
+              // pkt.sensor_data1=aRxBuffer3[1];
+               
+              // memcpy(&pkt.sensor_data,(const void *)&aRxBuffer3[1],4);
+            // }        
+             
+           
+             pkt.battery=BatValue;
+       
+            if(unicast_connection.udp_conn!=NULL)      
+            {
+                // send sensor report data here
+               // BSP_LED_Toggle(LED_GREEN);
+             
+              //sprintf(&buf[3], "Message %lu",  message_number);
+                if( pkt.sensor_type==0x0c &&tmp_humidity_counter%5==0)
+                {
+                  simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);
+                  tmp_humidity_counter=0;
+                }else if( pkt.sensor_type!=0x0c)
+                {
+                     simple_udp_sendto(&unicast_connection,(const void *)&pkt, sizeof(pkt),addr);// strlen(buf),addr);
+                } 
+                 
+                //message_number++;LED_ALARM
+                sensor_triggered=0;
+            }                 
+           }             
+             
      }
     
      

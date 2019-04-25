@@ -242,6 +242,22 @@
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>596</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>../../Src/unicast-sender.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
       </Breakpoint>
       <Tracepoint>
         <THDelay>0</THDelay>
@@ -461,9 +477,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>948</LineNumber>
+          <LineNumber>596</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134280918</Address>
+          <Address>134226324</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -472,7 +488,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>../../Src/unicast-sender.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\udp_sender_l152\../../Src/unicast-sender.c\948</Expression>
+          <Expression>\\udp_sender_l152\../../Src/unicast-sender.c\596</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -590,6 +606,16 @@
           <count>22</count>
           <WinNumber>1</WinNumber>
           <ItemText>Sensor_Alarm_Triggered</ItemText>
+        </Ww>
+        <Ww>
+          <count>23</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Alarm_Retry_Flag</ItemText>
+        </Ww>
+        <Ww>
+          <count>24</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Alarm_Resent_Times</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -1468,7 +1494,7 @@
 
   <Group>
     <GroupName>Middlewares/Contiki/core/net/rpl</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

@@ -58,7 +58,7 @@
 #include <limits.h>
 #include <string.h>
 
-#define DEBUG DEBUG_NONE
+#define DEBUG DEBUG_PRINT //DEBUG_NONE
 #include "net/ip/uip-debug.h"
 
 /* A configurable function called after every RPL parent switch */
@@ -1105,7 +1105,7 @@ rpl_join_instance(uip_ipaddr_t *from, rpl_dio_t *dio)
   }
 
   instance = dag->instance;
-
+  
   p = rpl_add_parent(dag, dio, from);
   PRINTF("RPL: Adding ");
   PRINT6ADDR(from);
