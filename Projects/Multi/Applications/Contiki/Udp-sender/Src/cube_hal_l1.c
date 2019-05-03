@@ -54,7 +54,7 @@
 
 /* I2C handler declaration */
 I2C_HandleTypeDef I2cHandle;
-
+IWDG_HandleTypeDef hiwdg;
 RTC_HandleTypeDef RtcHandle;
 
 extern ADC_HandleTypeDef hadc;
@@ -157,10 +157,11 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
 
   /* Enable HSE Oscillator and Activate PLL with HSE as source */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSEState = RCC_HSE_OFF;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
@@ -398,6 +399,26 @@ void MX_DMA_Init(void)
   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
 
 }
+
+
+
+/* IWDG init function */
+void MX_IWDG_Init(void)
+{
+
+  hiwdg.Instance = IWDG;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_128;
+  hiwdg.Init.Reload = 4095;
+  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  {
+    ;//_Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+
+
+
 
 /*
 Description: MX_I2C_Init header defines in cube_hal.h

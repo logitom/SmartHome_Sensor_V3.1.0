@@ -95,13 +95,15 @@ int main()
   
   MX_MCU_Init();
   
+  MX_IWDG_Init();
+  
   /* 8-bit mcu I2C */ 
   MX_I2C_Init();
   
  // MX_DMA_Init(); 
   
   MX_ADC_Init();
-  
+ 
   //HAL_ADC_Start_IT(&hadc);
   HAL_ADC_Start(&hadc);
   //HAL_ADC_Start_DMA(&hadc, (uint32_t*)&adcValue,1);
@@ -130,6 +132,16 @@ int main()
   _print_fw_info();
   
   
+  
+  /* Check if the system has resumed from IWDG reset */
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
+	{
+		   // BSP_LED_On(LED_ALARM);
+	      printf("watch dog reset \r\n");	
+		    /* Clear reset flags */
+		    __HAL_RCC_CLEAR_RESET_FLAGS();
+ 	}
+   
   
   
   

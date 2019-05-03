@@ -1,0 +1,13 @@
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/dev/leds.c
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/dev/leds.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/contiki-conf.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/platform-conf.h
+s2lp_stm32l152re_nucleo\exe\leds.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+s2lp_stm32l152re_nucleo\exe\leds.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+s2lp_stm32l152re_nucleo\exe\leds.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../Inc/low-power.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../Inc/project-conf.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/sys/clock.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/sys/energest.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/sys/rtimer.h
+s2lp_stm32l152re_nucleo\exe\leds.o: ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/rtimer-arch.h

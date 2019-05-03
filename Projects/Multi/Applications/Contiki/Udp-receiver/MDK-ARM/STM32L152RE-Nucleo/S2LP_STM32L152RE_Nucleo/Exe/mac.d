@@ -1,0 +1,11 @@
+s2lp_stm32l152re_nucleo\exe\mac.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/net/mac/mac.c
+s2lp_stm32l152re_nucleo\exe\mac.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/net/mac/mac.h
+s2lp_stm32l152re_nucleo\exe\mac.o: ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/contiki-conf.h
+s2lp_stm32l152re_nucleo\exe\mac.o: ../../../../../../../Middlewares/ST/Contiki_STM32_Library/Inc/platform-conf.h
+s2lp_stm32l152re_nucleo\exe\mac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+s2lp_stm32l152re_nucleo\exe\mac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+s2lp_stm32l152re_nucleo\exe\mac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+s2lp_stm32l152re_nucleo\exe\mac.o: ../../Inc/low-power.h
+s2lp_stm32l152re_nucleo\exe\mac.o: ../../Inc/project-conf.h
+s2lp_stm32l152re_nucleo\exe\mac.o: ../../../../../../../Middlewares/Third_Party/Contiki/core/dev/radio.h
+s2lp_stm32l152re_nucleo\exe\mac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

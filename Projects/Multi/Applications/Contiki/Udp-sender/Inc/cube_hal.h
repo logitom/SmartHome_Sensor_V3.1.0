@@ -64,6 +64,8 @@ void MX_DMA_Init(void);
 void MX_ADC_Init(void);
 void MX_MCU_Init(void);
 void MX_I2C_Init(void);
+void MX_IWDG_Init(void);
+
 void USARTConfig(void);
 void BUZZERConfig(void);
 void Buzzer_On(void);

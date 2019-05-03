@@ -559,11 +559,12 @@ ARM Macro Assembler    Page 9
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=spirit1_stml152re_nucleo\exe\startup_stm32l152xe.d -ospirit1_stml1
-52re_nucleo\exe\startup_stm32l152xe.o -I.\RTE\_SPIRIT1_STML152RE_Nucleo -IC:\Ke
-il_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32L1
+ork --depend=s2lp_stm32l152re_nucleo\exe\startup_stm32l152xe.d -os2lp_stm32l152
+re_nucleo\exe\startup_stm32l152xe.o -ID:\Project\STM\STM_V3.1.0_Sensor\Projects
+\Multi\Applications\Contiki\Udp-receiver\MDK-ARM\STM32L152RE-Nucleo\RTE -IC:\Ke
+il_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32L1
 xx_DFP\1.2.0\Device\Include --predefine="__MICROLIB SETA 1" --predefine="__UVIS
-ION_VERSION SETA 524" --predefine="_RTE_ SETA 1" --predefine="STM32L152xE SETA 
+ION_VERSION SETA 518" --predefine="_RTE_ SETA 1" --predefine="STM32L152xE SETA 
 1" --list=startup_stm32l152xe.lst startup_stm32l152xe.s
 
 

@@ -70,7 +70,7 @@
 
 #define LOOP_INTERVAL		(1 * CLOCK_SECOND)
 #define RESENT_INTERVAL (LOOP_INTERVAL*5)
-
+#define IWDG_INTERVAL   (LOOP_INTERVAL*5)
 
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
@@ -158,7 +158,8 @@ static const char *duty_cycle_name[DUTY_CYCLE_NB] =
 
 
 
-static void MX_WWDG_Init(void);
+//static void MX_WWDG_Init(void);
+//  HAL_IWDG_Refresh(&hiwdg); 
 
 
 
@@ -260,6 +261,8 @@ uint32_t BatValue=0;
 extern uint32_t adcValue; 
 /* for battery monitoring */ 
 
+extern IWDG_HandleTypeDef hiwdg; 
+ 
  
  
 /*---------------------------------------------------------------------------*/
@@ -273,8 +276,8 @@ int Alarm_Retry_Flag=0;
 PROCESS(unicast_sender_process, "Unicast sender example process");
 PROCESS(data_receiver_process,"data from server process");
 PROCESS(battery_process,"battery monitoring process");
-//PROCESS(watchdog_process, "watchdog process");
-AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process,&battery_process);//,&watchdog_process);
+PROCESS(watchdog_process, "watchdog process");
+AUTOSTART_PROCESSES(&unicast_sender_process,&data_receiver_process,&battery_process,&watchdog_process);
 
 
 /*---------------------------------------------------------------------------*/
@@ -1239,41 +1242,24 @@ PROCESS_THREAD(data_receiver_process, ev, data)
 PROCESS_THREAD(watchdog_process, ev, data)
 {
   
+    static struct etimer IWDG_timer;  
     
-  PROCESS_BEGIN();    
+    etimer_set(&IWDG_timer, IWDG_INTERVAL);
+  
     
-  MX_WWDG_Init();    
-      
-	/* Check if the system has resumed from WWDG reset */
-	if (__HAL_RCC_GET_FLAG(RCC_FLAG_WWDGRST) != RESET)
-	{
-		
-	  printf("watch dog reset \r\n");	
-		/* Clear reset flags */
-		__HAL_RCC_CLEAR_RESET_FLAGS();
-	}
-	else
-	{
-	  printf("watch dog init \r\n");	    
-	}    
-   
-   
+    PROCESS_BEGIN();    
+    
+    while(1){
+    PROCESS_WAIT_EVENT();
+    if(ev==PROCESS_EVENT_TIMER)   
+    {
+        HAL_IWDG_Refresh(&hiwdg);	 
+    } 
+    
+        etimer_restart(&IWDG_timer);  
+  }
      
   
-    while(1){
-    /* WWDG clock = (PCLK1(32MHz)/4096)/8) = 976.56 Hz (1.02ms)
-		 * Timeout = ~1.02 ms * (127-63) = 65.28 ms // 0x40=64 
-		 * Refresh = ~1.02 ms * (127-80) = 47.94 ms // window
-		 * Window = 47.94 ms to 65.28 ms */
-	 
-    HAL_Delay(50);
-		
-	//	while (HAL_GPIO_ReadPin(SW_GPIO_Port, SW_Pin) == GPIO_PIN_RESET);
-		
-    HAL_WWDG_Refresh(&hwwdg);
-    printf("watch dog refresh \r\n");  
-     
-    }
     PROCESS_END();  
 }
 
