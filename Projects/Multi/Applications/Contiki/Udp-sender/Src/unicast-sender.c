@@ -93,7 +93,7 @@
 /*---------------------------------------------------------------------------*/
 /* for resent function                                                       */
 /*---------------------------------------------------------------------------*/
-#define ALARM_RETRY_TIMES 8
+#define ALARM_RETRY_TIMES 30
 
 
 /*---------------------------------------------------------------------------*/
@@ -262,7 +262,10 @@ extern uint32_t adcValue;
 /* for battery monitoring */ 
 
 extern IWDG_HandleTypeDef hiwdg; 
- 
+
+
+ uint8_t Sensor_Type;
+ uint8_t Sensor_Status;
  
  
 /*---------------------------------------------------------------------------*/
@@ -353,10 +356,10 @@ receiver(struct simple_udp_connection *c,
     data_buffer[0].valid_bit=1;
    // received_counter++;
 
-    printf("\r\n recevied data from: \r\n");
+   // printf("\r\n recevied data from: \r\n");
  
     uip_debug_ipaddr_print(sender_addr);
-    printf("\r\n datalen:%d\r\n",datalen);
+   // printf("\r\n datalen:%d\r\n",datalen);
       
   
    // process_post(&data_receiver_process,EVENT_COMMAND,NULL);      
@@ -369,12 +372,12 @@ receiver(struct simple_udp_connection *c,
             BSP_LED_Off(LED_ALARM);
             HAL_TIM_PWM_Stop(&htim3,TIM_CHANNEL_1);
             simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );
-            printf(" disable command ACK\r\n");
+   //         printf(" disable command ACK\r\n");
        
         }else if(spkt->cmd==CMD_LED_ON || spkt->cmd==CMD_LED_OFF)
         {
             aTxBuffer2[1]=spkt->cmd; //led on/off  
-            printf("LED command:%d \r\n",aTxBuffer2[1]);             
+        //    printf("LED command:%d \r\n",aTxBuffer2[1]);             
             I2C_Sensor_Write();  
             // send an LED ack   for resent 
   #if 0         
@@ -387,12 +390,12 @@ receiver(struct simple_udp_connection *c,
             } 
   #endif                   
             simple_udp_sendto(&unicast_connection,(const void *)spkt, sizeof(sensor_pkt),&data_buffer[0].node_addr );          
-            printf(" sensor  ACK:%d\r\n",spkt->cmd);
+           // printf(" sensor  ACK:%d\r\n",spkt->cmd);
         }else if(spkt->cmd==CMD_ALARM_ACK)
         {
           Alarm_Retry_Flag=0;//resent
           Alarm_Resent_Times=0;
-          printf(" received an alarm ACK:%d\r\n",spkt->cmd); 
+          //printf(" received an alarm ACK:%d\r\n",spkt->cmd); 
         }
  
     
@@ -545,7 +548,7 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
   // if alarm triggered return alarm_flag=0;
   /* Toggle LED2: Transfer in reception process is correct */
   
-  #if 1 // 0:for LED image. 1: for other nodes
+#if !SMART_HOME_LED 
 
 if(RxCounter==I2C_SENSOR_PACKET1)  
 {
@@ -673,11 +676,15 @@ comment: function header define in main.h
 ******************************************************************/
 void I2C_Sensor_Write(void)
 {
-   int i=0;
-     
-  // aRxBuffer[0]=0x00;
+
+   int i=0;  
+ 
    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET ); 
-	 HAL_Delay(10);
+	 HAL_Delay(10);   
+
+
+  
+
 	
 
  /*##-2- Put I2C peripheral in reception process ###########################*/  
@@ -786,15 +793,16 @@ void I2C_Sensor_Query(void)
   
    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET ); 
 	 HAL_Delay(10);
-	
+ 
+#if SMART_HOME_LED
 
  /*##-2- Put I2C peripheral in reception process ###########################*/  
  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
 for(i=0;i<6;i++)
 {
   //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
-  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i], 1) != HAL_OK)
-  //if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)  
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i], 1) != HAL_OK)
+  if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)  
   {
     /* Transfer error in reception process */
     Error_Handler();
@@ -802,7 +810,7 @@ for(i=0;i<6;i++)
 
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it?s busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -821,8 +829,8 @@ for(i=0;i<4;i++)
 {    
  /*##-2- Put I2C peripheral in reception process ###########################*/  
   // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
-	//if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
-  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
   {
     /* Transfer error in reception process */
     Error_Handler();
@@ -830,7 +838,7 @@ for(i=0;i<4;i++)
   
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it?s busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -845,8 +853,8 @@ for(i=0;i<5;i++)
 {   
  /*##-2- Put I2C peripheral in reception process ###########################*/  
   // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
-	//if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
-  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+	if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
   {
     /* Transfer error in reception process */
     Error_Handler();
@@ -854,7 +862,7 @@ for(i=0;i<5;i++)
   
   /*##-3- Wait for the end of the transfer ###################################*/  
   /*  Before starting a new communication transfer, you need to check the current   
-      state of the peripheral; if it’s busy you need to wait for the end of current
+      state of the peripheral; if it?s busy you need to wait for the end of current
       transfer before starting a new one.
       For simplicity reasons, this example is just waiting till the end of the
       transfer, but application may perform other tasks while transfer operation
@@ -870,10 +878,10 @@ for(i=0;i<5;i++)
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);  
 
 
-  HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
-  RxCounter=6;  
-  //HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);	
- #if 0 // for led
+ // HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
+//  RxCounter=6;  
+  HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);	
+
 	while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
   {
   } 		
@@ -919,9 +927,99 @@ for(i=0;i<5;i++)
  // for ohter nodes
  // HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
 	//HAL_I2C_Slave_Receive_IT(&I2cHandle,(uint8_t*)aRxBuffer,6);
+      
+  	
+#else
+/*##-2- Put I2C peripheral in reception process ###########################*/  
+ // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
+for(i=0;i<6;i++)
+{
+  //if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)
+  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i], 1) != HAL_OK)
+  //if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer[i],1) != HAL_OK)  
+  {
+    /* Transfer error in reception process */
+    Error_Handler();
+  }
+
+  /*##-3- Wait for the end of the transfer ###################################*/  
+  /*  Before starting a new communication transfer, you need to check the current   
+      state of the peripheral; if it?s busy you need to wait for the end of current
+      transfer before starting a new one.
+      For simplicity reasons, this example is just waiting till the end of the
+      transfer, but application may perform other tasks while transfer operation
+      is ongoing. */
+
+  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  }
+  
+}  
+
+//jas add
+HAL_Delay(1); 
+
+for(i=0;i<4;i++)
+{    
+ /*##-2- Put I2C peripheral in reception process ###########################*/  
+  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
+	//if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer2[i],1) != HAL_OK)
+  {
+    /* Transfer error in reception process */
+    Error_Handler();
+  }
+  
+  /*##-3- Wait for the end of the transfer ###################################*/  
+  /*  Before starting a new communication transfer, you need to check the current   
+      state of the peripheral; if it?s busy you need to wait for the end of current
+      transfer before starting a new one.
+      For simplicity reasons, this example is just waiting till the end of the
+      transfer, but application may perform other tasks while transfer operation
+      is ongoing. */
+
+  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  }
+}
+ 
+for(i=0;i<5;i++)
+{   
+ /*##-2- Put I2C peripheral in reception process ###########################*/  
+  // (I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
+	//if(HAL_I2C_Master_Transmit_IT(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+  if(HAL_I2C_Master_Transmit_DMA(&I2cHandle,I2C_ADDRESS,(uint8_t *)&aTxBuffer3[i],1) != HAL_OK)
+  {
+    /* Transfer error in reception process */
+    Error_Handler();
+  }
+  
+  /*##-3- Wait for the end of the transfer ###################################*/  
+  /*  Before starting a new communication transfer, you need to check the current   
+      state of the peripheral; if it?s busy you need to wait for the end of current
+      transfer before starting a new one.
+      For simplicity reasons, this example is just waiting till the end of the
+      transfer, but application may perform other tasks while transfer operation
+      is ongoing. */
+
+  while (HAL_I2C_GetState(&I2cHandle) != HAL_I2C_STATE_READY)
+  {
+  }
+  
+}
+
+  //jas add
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);  
+
+
+  HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
+  RxCounter=6;   
+ 
 #endif	  
 
-	//I2C_Sensor_Read();
+
+ Sensor_Type=aRxBuffer2[0];
+ Sensor_Status=aRxBuffer2[2];	
 
 }  
 
@@ -1027,14 +1125,23 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
              pkt.alarm_status=aRxBuffer2[1]; // 1: alarm was triggered
              pkt.index=1;
              
-             pkt.sensor_type=aRxBuffer2[0];
-             
+             if(aRxBuffer2[0]==0 || aRxBuffer2[2]==0)
+             {
+                 pkt.sensor_type=Sensor_Type;
+                 pkt.status=Sensor_Status;
+             }else
+             {
+                 pkt.sensor_type=aRxBuffer2[0];
+                 pkt.status=aRxBuffer2[2];              
+               
+             }  
+               
              if( pkt.sensor_type==0x0c)
              {
                tmp_humidity_counter++;   
              }
              
-             pkt.status=aRxBuffer2[2];
+            
              pkt.total_sensor=total_sensor;          
              
              for(i=0;i<total_sensor;i++)
@@ -1101,14 +1208,25 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
              pkt.alarm_status=aRxBuffer2[1]; // 1: alarm was triggered
              pkt.index=1;
              
-             pkt.sensor_type=aRxBuffer2[0];
-             
+                         
              if( pkt.sensor_type==0x0c)
              {
                tmp_humidity_counter++;   
              }
              
-             pkt.status=aRxBuffer2[2];
+            
+             if(aRxBuffer2[0]==0 || aRxBuffer2[2]==0)
+             {
+                 pkt.sensor_type=Sensor_Type;
+                 pkt.status=Sensor_Status;
+             }else
+             {
+                 pkt.sensor_type=aRxBuffer2[0];
+                 pkt.status=aRxBuffer2[2];              
+               
+             }  
+             
+            
              pkt.total_sensor=total_sensor;          
              
              for(i=0;i<total_sensor;i++)

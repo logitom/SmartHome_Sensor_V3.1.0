@@ -273,7 +273,7 @@ void MX_GPIO_Init(void)
  // __HAL_RCC_I2C1_CLK_ENABLE();
   __TIM2_CLK_ENABLE();
   __TIM3_CLK_ENABLE();
- // __HAL_RCC_WWDG_CLK_ENABLE();
+ 
  
     /*Configure GPIO pin : PC3 */
   GPIO_InitStruct.Pin = GPIO_PIN_3;
@@ -310,7 +310,7 @@ void MX_MCU_Init(void)
   //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);   //jas mark
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);       //jas add   
   
-  #if 0
+  #if 1
    /*Configure GPIO pin : PB4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -406,12 +406,20 @@ void MX_DMA_Init(void)
 void MX_IWDG_Init(void)
 {
 
+  /********************************************* 
+  *   Watch Dog timeout: 14.1 seconds.         *
+  *   External Crystal Frequence: 37kHz        *
+  *   Prescale:128                             * 
+  *   37000/128=289                            *
+  *   1*4095/289=14.1 seconds                  *
+  *********************************************/
+      
   hiwdg.Instance = IWDG;
   hiwdg.Init.Prescaler = IWDG_PRESCALER_128;
   hiwdg.Init.Reload = 4095;
   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
   {
-    ;//_Error_Handler(__FILE__, __LINE__);
+    ;
   }
 
 }

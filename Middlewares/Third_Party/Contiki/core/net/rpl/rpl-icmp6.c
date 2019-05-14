@@ -1022,8 +1022,10 @@ dao_input(void)
   }
 
   if(RPL_IS_STORING(instance)) {
+     PRINTF("\r\n storing mode \r\n");
     dao_input_storing();
   } else if(RPL_IS_NON_STORING(instance)) {
+     PRINTF("\r\n non-storing mode \r\n");
     dao_input_nonstoring();
   }
 
