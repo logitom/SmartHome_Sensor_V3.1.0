@@ -85,6 +85,8 @@ int main()
   SystemClock_Config();
   
   HAL_EnableDBGStopMode();
+
+   
   
   MX_GPIO_Init();
   
@@ -95,19 +97,18 @@ int main()
   
   MX_MCU_Init();
   
-  MX_IWDG_Init();
+
   
   /* 8-bit mcu I2C */ 
   MX_I2C_Init();
   
- // MX_DMA_Init(); 
+  MX_DMA_Init(); 
   
   MX_ADC_Init();
  
-  //HAL_ADC_Start_IT(&hadc);
+ 
   HAL_ADC_Start(&hadc);
-  //HAL_ADC_Start_DMA(&hadc, (uint32_t*)&adcValue,1);
-  
+   
 #if MCU_LOW_POWER
   if (USER_CLOCK_FREQUENCY != DEFAULT_CLOCK_FREQUENCY) {
 	  HAL_RCC_DeInit();
@@ -134,7 +135,7 @@ int main()
   
   
   /* Check if the system has resumed from IWDG reset */
-	if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST))
 	{
 		   // BSP_LED_On(LED_ALARM);
 	      printf("watch dog reset \r\n");	
@@ -142,11 +143,11 @@ int main()
 		    __HAL_RCC_CLEAR_RESET_FLAGS();
  	}
    
-  
+
   
   
   Stack_6LoWPAN_Init();
-  
+  MX_IWDG_Init(); 
   //Jas add
 	
 //	BSP_LED_On(LED_GREEN); 

@@ -70,7 +70,7 @@
 
 #define LOOP_INTERVAL		(1 * CLOCK_SECOND)
 #define RESENT_INTERVAL (LOOP_INTERVAL*5)
-#define IWDG_INTERVAL   (LOOP_INTERVAL*5)
+#define IWDG_INTERVAL   (5*CLOCK_SECOND)
 
 #define UDP_PORT 1234
 #define MESSAGE_SIZE 20
@@ -245,7 +245,7 @@ volatile uint8_t RxCounter=0;
  uint8_t aTxBuffer3[5]={0x08,0x55,0xAA,0x55,0xAA};
 static uint8_t received_counter=0;
 static uint8_t sensor_triggered=0;
-sensor_pkt  pkt;
+static sensor_pkt  pkt;
 
  
 int BootUp=1;
@@ -264,7 +264,7 @@ extern uint32_t adcValue;
 extern IWDG_HandleTypeDef hiwdg; 
 
 
- uint8_t Sensor_Type;
+ volatile uint8_t Sensor_Type;
  uint8_t Sensor_Status;
  
  
@@ -791,6 +791,7 @@ void I2C_Sensor_Query(void)
   //I2C_Sensor_Write();
    int i=0;
   
+  
    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET ); 
 	 HAL_Delay(10);
  
@@ -1014,13 +1015,13 @@ for(i=0;i<5;i++)
 
   HAL_I2C_Slave_Receive_DMA(&I2cHandle,(uint8_t*)aRxBuffer,6);
   RxCounter=6;   
- 
+  printf("\r\n non-LED query \r\n");
 #endif	  
 
 
  Sensor_Type=aRxBuffer2[0];
  Sensor_Status=aRxBuffer2[2];	
-
+ printf("\r\n query type:%d,query: status%d \r\n",aRxBuffer2[0],aRxBuffer2[2]);
 }  
 
 
@@ -1125,6 +1126,14 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
              pkt.alarm_status=aRxBuffer2[1]; // 1: alarm was triggered
              pkt.index=1;
              
+             
+             pkt.sensor_type=aRxBuffer2[0];
+             pkt.status=aRxBuffer2[2];    
+             
+             printf("\r\n sensor type:%d, sensor type:%d \r\n",aRxBuffer2[0],aRxBuffer2[2]);     
+             //printf("\r\n pkt status:%d, sensor type:%d \r\n",pkt.sensor_type,pkt.status);
+             
+             #if 0    
              if(aRxBuffer2[0]==0 || aRxBuffer2[2]==0)
              {
                  pkt.sensor_type=Sensor_Type;
@@ -1134,7 +1143,8 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                  pkt.sensor_type=aRxBuffer2[0];
                  pkt.status=aRxBuffer2[2];              
                
-             }  
+             }
+             #endif             
                
              if( pkt.sensor_type==0x0c)
              {
@@ -1214,7 +1224,15 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                tmp_humidity_counter++;   
              }
              
-            
+             
+              
+             pkt.sensor_type=aRxBuffer2[0];
+             pkt.status=aRxBuffer2[2];    
+             
+             printf("\r\n sensor type:%d, sensor type:%d \r\n",aRxBuffer2[0],aRxBuffer2[2]);    
+                  
+             
+             #if 0
              if(aRxBuffer2[0]==0 || aRxBuffer2[2]==0)
              {
                  pkt.sensor_type=Sensor_Type;
@@ -1225,7 +1243,7 @@ PROCESS_THREAD(unicast_sender_process, ev, data)
                  pkt.status=aRxBuffer2[2];              
                
              }  
-             
+             #endif 
             
              pkt.total_sensor=total_sensor;          
              
@@ -1285,7 +1303,7 @@ WWDG_HandleTypeDef hwwdg;
 
 static void MX_WWDG_Init(void)
 {
-  
+   #if 0
   hwwdg.Instance = WWDG;
   hwwdg.Init.Prescaler = WWDG_PRESCALER_8;
   hwwdg.Init.Window = 64;
@@ -1295,7 +1313,7 @@ static void MX_WWDG_Init(void)
   {
     printf("watch dog MX_WWDG_Init failed \r\n");
   }
-  #if 0
+ 
   hwwdg.Init.Counter = 127;
   if (HAL_WWDG_Init(&hwwdg) != HAL_OK)
   {
@@ -1363,7 +1381,7 @@ PROCESS_THREAD(watchdog_process, ev, data)
     static struct etimer IWDG_timer;  
     
     etimer_set(&IWDG_timer, IWDG_INTERVAL);
-  
+    //printf("\r\n IWDG started...\r\n");
     
     PROCESS_BEGIN();    
     
@@ -1371,7 +1389,12 @@ PROCESS_THREAD(watchdog_process, ev, data)
     PROCESS_WAIT_EVENT();
     if(ev==PROCESS_EVENT_TIMER)   
     {
+        
+        
+      // printf("\r\n KR:%d  \r\n",hiwdg.Instance->KR);
+      // printf("\r\n SR:%d  \r\n",hiwdg.Instance->SR);   
         HAL_IWDG_Refresh(&hiwdg);	 
+      //  printf("\r\n IWDG reload...\r\n");
     } 
     
         etimer_restart(&IWDG_timer);  
@@ -1388,6 +1411,7 @@ PROCESS_THREAD(watchdog_process, ev, data)
   *                the configuration information for the specified WWDG module.
   * @retval None
   */
+#if 0
  void HAL_WWDG_EarlyWakeupCallback(WWDG_HandleTypeDef* hwwdg)
 {
   /* Prevent unused argument(s) compilation warning */
@@ -1404,7 +1428,7 @@ PROCESS_THREAD(watchdog_process, ev, data)
            the HAL_WWDG_EarlyWakeupCallback could be implemented in the user file
    */
 }
-
+#endif
 
 
 /*---------------------------------------------------------------------------*/

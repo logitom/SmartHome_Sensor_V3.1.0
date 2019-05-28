@@ -216,7 +216,7 @@ void Stack_6LoWPAN_Init(void)
   uip_nameserver_update((uip_ipaddr_t *)&ip6addr, UIP_NAMESERVER_INFINITE_LIFETIME);
 #endif /*WITH_IP64*/
   
-  watchdog_start();
+  //watchdog_start();
 }
 /*---------------------------------------------------------------------------*/
 static void set_rime_addr(void)

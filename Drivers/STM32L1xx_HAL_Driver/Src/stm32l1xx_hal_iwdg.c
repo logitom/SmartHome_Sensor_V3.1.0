@@ -174,10 +174,13 @@ HAL_StatusTypeDef HAL_IWDG_Init(IWDG_HandleTypeDef *hiwdg)
   assert_param(IS_IWDG_ALL_INSTANCE(hiwdg->Instance));
   assert_param(IS_IWDG_PRESCALER(hiwdg->Init.Prescaler));
   assert_param(IS_IWDG_RELOAD(hiwdg->Init.Reload));
-
+  
+ 
+  
+ 
   /* Enable IWDG. LSI is turned on automaticaly */
   __HAL_IWDG_START(hiwdg);
-
+ 
   /* Enable write access to IWDG_PR, IWDG_RLR registers by writing
   0x5555 in KR */
   IWDG_ENABLE_WRITE_ACCESS(hiwdg);
@@ -201,6 +204,7 @@ HAL_StatusTypeDef HAL_IWDG_Init(IWDG_HandleTypeDef *hiwdg)
   /* Reload IWDG counter with value defined in the reload register */
   __HAL_IWDG_RELOAD_COUNTER(hiwdg);
 
+     
   /* Return function status */
   return HAL_OK;
 }
