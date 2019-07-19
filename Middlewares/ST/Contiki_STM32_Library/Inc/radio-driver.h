@@ -195,7 +195,7 @@ void Radio_interrupt_callback(void);
 #define CHANNEL_SPACE               20e3
 #define FREQ_DEVIATION              20e3
 #define BANDWIDTH                   100.0e3
-#define MODULATION_SELECT           FSK
+#define MODULATION_SELECT           GFSK_BT1
 #define DATARATE                    38400
 #define XTAL_OFFSET_PPM             0
 #define SYNC_WORD                   0x1A2635A8

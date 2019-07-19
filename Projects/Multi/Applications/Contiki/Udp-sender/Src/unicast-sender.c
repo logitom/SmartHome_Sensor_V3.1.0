@@ -1393,7 +1393,7 @@ PROCESS_THREAD(watchdog_process, ev, data)
         
       // printf("\r\n KR:%d  \r\n",hiwdg.Instance->KR);
       // printf("\r\n SR:%d  \r\n",hiwdg.Instance->SR);   
-        HAL_IWDG_Refresh(&hiwdg);	 
+         HAL_IWDG_Refresh(&hiwdg);	 
       //  printf("\r\n IWDG reload...\r\n");
     } 
     
@@ -1464,6 +1464,9 @@ PROCESS_THREAD(battery_process, ev, data)
   
   
 }
+
+
+
 
 
 /* USER CODE BEGIN 4 */
